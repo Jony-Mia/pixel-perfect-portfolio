@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { Facebook, Instagram, Linkedin, Youtube, Twitter } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 import profileImage from '@/assets/profile.png';
 
 const socialLinks = [
@@ -15,6 +16,7 @@ const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -59,42 +61,41 @@ const Hero = () => {
           {/* Text Content */}
           <div ref={textRef} className="order-2 lg:order-1">
             <p className="text-primary font-semibold mb-4 tracking-wider uppercase">
-              Welcome to my Portfolio
+              {t('hero.welcome')}
             </p>
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              Hi, I'm <span className="text-gradient">Jony</span>
+              {t('hero.greeting')} <span className="text-gradient">{t('hero.name')}</span>
             </h1>
             <h2 className="text-2xl md:text-3xl text-muted-foreground mb-6">
-              Professional Web Developer
+              {t('hero.title')}
             </h2>
             <p className="text-muted-foreground text-lg mb-8 max-w-xl">
-              Crafting stunning websites and powerful web applications with expertise in
-              WordPress, React, and modern web technologies. Let's build something amazing together.
+              {t('hero.description')}
             </p>
 
             {/* Stats */}
             <div className="flex gap-8 mb-8">
               <div className="text-center">
                 <p className="text-4xl font-bold text-gradient">2+</p>
-                <p className="text-muted-foreground text-sm">Years Experience</p>
+                <p className="text-muted-foreground text-sm">{t('hero.yearsExp')}</p>
               </div>
               <div className="text-center">
                 <p className="text-4xl font-bold text-gradient">95+</p>
-                <p className="text-muted-foreground text-sm">Projects Delivered</p>
+                <p className="text-muted-foreground text-sm">{t('hero.projects')}</p>
               </div>
               <div className="text-center">
                 <p className="text-4xl font-bold text-gradient">50+</p>
-                <p className="text-muted-foreground text-sm">Happy Clients</p>
+                <p className="text-muted-foreground text-sm">{t('hero.clients')}</p>
               </div>
             </div>
 
             {/* Buttons */}
             <div className="flex flex-wrap gap-4 mb-8">
               <button onClick={scrollToPortfolio} className="btn-primary">
-                View Portfolio
+                {t('hero.viewPortfolio')}
               </button>
               <button onClick={scrollToContact} className="btn-outline">
-                Let's Talk
+                {t('hero.letsTalk')}
               </button>
             </div>
 

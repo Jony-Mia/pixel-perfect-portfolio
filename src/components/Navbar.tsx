@@ -1,20 +1,22 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 import logo from '@/assets/logo.png';
-
-const navLinks = [
-  { name: 'Home', href: '#home' },
-  { name: 'About', href: '#about' },
-  { name: 'Skills', href: '#skills' },
-  { name: 'Portfolio', href: '#portfolio' },
-  { name: 'Services', href: '#services' },
-  { name: 'Pricing', href: '#pricing' },
-  { name: 'Contact', href: '#contact' },
-];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { t } = useLanguage();
+
+  const navLinks = [
+    { name: t('nav.home'), href: '#home' },
+    { name: t('nav.about'), href: '#about' },
+    { name: t('nav.skills'), href: '#skills' },
+    { name: t('nav.portfolio'), href: '#portfolio' },
+    { name: t('nav.services'), href: '#services' },
+    { name: t('nav.pricing'), href: '#pricing' },
+    { name: t('nav.contact'), href: '#contact' },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,7 +50,7 @@ const Navbar = () => {
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <button
-                key={link.name}
+                key={link.href}
                 onClick={() => scrollToSection(link.href)}
                 className="text-muted-foreground hover:text-primary transition-colors duration-300 font-medium"
               >
@@ -59,7 +61,7 @@ const Navbar = () => {
               onClick={() => scrollToSection('#portfolio')}
               className="btn-primary text-sm"
             >
-              View Portfolio
+              {t('nav.viewPortfolio')}
             </button>
           </div>
 
@@ -78,7 +80,7 @@ const Navbar = () => {
             <div className="flex flex-col p-4 gap-4">
               {navLinks.map((link) => (
                 <button
-                  key={link.name}
+                  key={link.href}
                   onClick={() => scrollToSection(link.href)}
                   className="text-muted-foreground hover:text-primary transition-colors duration-300 font-medium text-left py-2"
                 >
@@ -89,7 +91,7 @@ const Navbar = () => {
                 onClick={() => scrollToSection('#portfolio')}
                 className="btn-primary text-sm mt-2"
               >
-                View Portfolio
+                {t('nav.viewPortfolio')}
               </button>
             </div>
           </div>

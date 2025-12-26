@@ -1,6 +1,8 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import CircularProgress from './CircularProgress';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,88 +21,12 @@ const skills = [
   { name: 'CartFlows', percentage: 88 },
 ];
 
-const wordpressExpertise = [
-  'Custom Theme Development',
-  'Plugin Customization',
-  'Elementor Pro Expert',
-  'WooCommerce Setup & Customization',
-  'CartFlows Funnel Building',
-  'Speed Optimization',
-  'Security Hardening',
-  'SEO Optimization',
-  'Responsive Design',
-  'Migration & Backup',
-];
-
-const reactExpertise = [
-  'React Hooks & Context',
-  'React Router DOM',
-  'State Management (Redux/Zustand)',
-  'TypeScript Integration',
-  'Tailwind CSS Styling',
-  'API Integration',
-  'Component Architecture',
-  'Performance Optimization',
-  'Testing (Jest/RTL)',
-  'Modern Build Tools',
-];
-
-const ecommerceExpertise = [
-  'WooCommerce Store Setup',
-  'Payment Gateway Integration',
-  'Product Management',
-  'Inventory Management',
-  'Shipping Configuration',
-  'Sales Funnel Creation',
-  'CartFlows Optimization',
-  'Conversion Rate Optimization',
-  'Order Management',
-  'Customer Analytics',
-];
-
-const SkillBar = ({ name, percentage }: { name: string; percentage: number }) => {
-  const [width, setWidth] = useState(0);
-  const barRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setWidth(percentage);
-        }
-      },
-      { threshold: 0.5 }
-    );
-
-    if (barRef.current) {
-      observer.observe(barRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, [percentage]);
-
-  return (
-    <div ref={barRef} className="mb-6">
-      <div className="flex justify-between mb-2">
-        <span className="font-medium">{name}</span>
-        <span className="text-primary font-semibold">{percentage}%</span>
-      </div>
-      <div className="skill-bar">
-        <div
-          className="skill-bar-fill"
-          style={{ width: `${width}%` }}
-        />
-      </div>
-    </div>
-  );
-};
-
 const ExpertiseCard = ({ title, items, color }: { title: string; items: string[]; color: string }) => (
   <div className="glass-card p-6 card-hover">
     <h3 className={`text-xl font-bold mb-4 ${color}`}>{title}</h3>
     <ul className="space-y-2">
-      {items.map((item) => (
-        <li key={item} className="flex items-center gap-2 text-muted-foreground">
+      {items.map((item, index) => (
+        <li key={index} className="flex items-center gap-2 text-muted-foreground">
           <span className={`w-2 h-2 rounded-full ${color === 'text-gradient' ? 'bg-primary' : color === 'text-accent' ? 'bg-accent' : 'bg-neon-purple'}`} />
           {item}
         </li>
@@ -111,6 +37,46 @@ const ExpertiseCard = ({ title, items, color }: { title: string; items: string[]
 
 const Skills = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const { t } = useLanguage();
+
+  const wordpressExpertise = [
+    t('wp.theme'),
+    t('wp.plugin'),
+    t('wp.elementor'),
+    t('wp.woo'),
+    t('wp.cartflows'),
+    t('wp.speed'),
+    t('wp.security'),
+    t('wp.seo'),
+    t('wp.responsive'),
+    t('wp.migration'),
+  ];
+
+  const reactExpertise = [
+    t('react.hooks'),
+    t('react.router'),
+    t('react.state'),
+    t('react.ts'),
+    t('react.tailwind'),
+    t('react.api'),
+    t('react.components'),
+    t('react.performance'),
+    t('react.testing'),
+    t('react.build'),
+  ];
+
+  const ecommerceExpertise = [
+    t('ecom.store'),
+    t('ecom.payment'),
+    t('ecom.product'),
+    t('ecom.inventory'),
+    t('ecom.shipping'),
+    t('ecom.funnel'),
+    t('ecom.cartflows'),
+    t('ecom.conversion'),
+    t('ecom.order'),
+    t('ecom.analytics'),
+  ];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -138,34 +104,34 @@ const Skills = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 skills-content">
           <h2 className="section-title">
-            My <span className="text-gradient">Skills</span>
+            {t('skills.title')} <span className="text-gradient">{t('skills.titleHighlight')}</span>
           </h2>
           <p className="section-subtitle">
-            Technologies and tools I've mastered throughout my career
+            {t('skills.subtitle')}
           </p>
         </div>
 
-        {/* Skill Bars */}
-        <div className="grid md:grid-cols-2 gap-x-12 gap-y-2 mb-20 skills-content">
+        {/* Circular Progress Skills */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 mb-20 skills-content">
           {skills.map((skill) => (
-            <SkillBar key={skill.name} {...skill} />
+            <CircularProgress key={skill.name} name={skill.name} percentage={skill.percentage} />
           ))}
         </div>
 
         {/* Expertise Cards */}
         <div className="grid md:grid-cols-3 gap-8 skills-content">
           <ExpertiseCard
-            title="WordPress Expertise"
+            title={t('skills.wordpress')}
             items={wordpressExpertise}
             color="text-gradient"
           />
           <ExpertiseCard
-            title="React Expertise"
+            title={t('skills.react')}
             items={reactExpertise}
             color="text-accent"
           />
           <ExpertiseCard
-            title="E-commerce Expertise"
+            title={t('skills.ecommerce')}
             items={ecommerceExpertise}
             color="text-neon-purple"
           />

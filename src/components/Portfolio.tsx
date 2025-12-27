@@ -11,31 +11,32 @@ interface Project {
   name: string;
   url: string;
   category: 'websites' | 'landing-pages';
+  image: string;
 }
 
 const projects: Project[] = [
-  { name: 'Homely', url: 'https://homely.com.bd', category: 'websites' },
-  { name: 'Kidoz', url: 'https://kidoz.com.bd', category: 'websites' },
-  { name: 'Kids Playnix', url: 'https://kidzplaynix.com', category: 'websites' },
-  { name: 'Khalifa Fashion World', url: 'https://khalifafashionworld.com', category: 'websites' },
-  { name: 'Hudaway BD', url: 'https://hudawaybd.com', category: 'websites' },
-  { name: 'Divine Aroma BD', url: 'https://divinearomabd.com', category: 'websites' },
-  { name: 'Qiblaa', url: 'https://qiblaa.com', category: 'websites' },
-  { name: 'Babies Haven BD', url: 'https://babieshavenbd.com', category: 'websites' },
-  { name: 'Solution BD', url: 'https://solutionbd.top', category: 'websites' },
-  { name: 'Bismillah Cargo', url: 'https://bismillahcargo.com.bd', category: 'websites' },
-  { name: 'Rafaa Online', url: 'https://rafaaonline.com', category: 'websites' },
-  { name: 'Bismillah Nogor', url: 'https://bismillahnogor.com', category: 'websites' },
-  { name: 'Solution BD Landing', url: 'https://solutionbd.top', category: 'landing-pages' },
-  { name: 'Vitalix BD', url: 'https://vitalixbd.com/vitalix-bd-ananta', category: 'landing-pages' },
-  { name: 'Bismillah Nogor Landing', url: 'https://bismillahnogor.com', category: 'landing-pages' },
-  { name: 'Gopali Pitha', url: 'https://gopalipitha.com', category: 'landing-pages' },
-  { name: 'Chandura', url: 'https://chandura.com', category: 'landing-pages' },
-  { name: 'Trendy Book BD', url: 'https://trendybookbd.com', category: 'landing-pages' },
-  { name: 'Barakah Publication', url: 'https://barakahpublication.shop', category: 'landing-pages' },
-  { name: 'Masud Telecom BD', url: 'https://masudtelecombd.com', category: 'landing-pages' },
-  { name: 'Sakura Agency', url: 'https://www.sakura.agency', category: 'landing-pages' },
-  { name: 'Kids Dream Drape', url: 'https://kids.dreamdrapebd.com', category: 'landing-pages' },
+  { name: 'Homely', url: 'https://homely.com.bd', category: 'websites', image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=250&fit=crop' },
+  { name: 'Kidoz', url: 'https://kidoz.com.bd', category: 'websites', image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&h=250&fit=crop' },
+  { name: 'Kids Playnix', url: 'https://kidzplaynix.com', category: 'websites', image: 'https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=400&h=250&fit=crop' },
+  { name: 'Khalifa Fashion World', url: 'https://khalifafashionworld.com', category: 'websites', image: 'https://images.unsplash.com/photo-1445205170230-053b83016050?w=400&h=250&fit=crop' },
+  { name: 'Hudaway BD', url: 'https://hudawaybd.com', category: 'websites', image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop' },
+  { name: 'Divine Aroma BD', url: 'https://divinearomabd.com', category: 'websites', image: 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=400&h=250&fit=crop' },
+  { name: 'Qiblaa', url: 'https://qiblaa.com', category: 'websites', image: 'https://images.unsplash.com/photo-1609599006353-e629aaabfeae?w=400&h=250&fit=crop' },
+  { name: 'Babies Haven BD', url: 'https://babieshavenbd.com', category: 'websites', image: 'https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=400&h=250&fit=crop' },
+  { name: 'Solution BD', url: 'https://solutionbd.top', category: 'websites', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop' },
+  { name: 'Bismillah Cargo', url: 'https://bismillahcargo.com.bd', category: 'websites', image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&h=250&fit=crop' },
+  { name: 'Rafaa Online', url: 'https://rafaaonline.com', category: 'websites', image: 'https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=400&h=250&fit=crop' },
+  { name: 'Bismillah Nogor', url: 'https://bismillahnogor.com', category: 'websites', image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=250&fit=crop' },
+  { name: 'Solution BD Landing', url: 'https://solutionbd.top', category: 'landing-pages', image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop' },
+  { name: 'Vitalix BD', url: 'https://vitalixbd.com/vitalix-bd-ananta', category: 'landing-pages', image: 'https://images.unsplash.com/photo-1505576399279-565b52d4ac71?w=400&h=250&fit=crop' },
+  { name: 'Bismillah Nogor Landing', url: 'https://bismillahnogor.com', category: 'landing-pages', image: 'https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?w=400&h=250&fit=crop' },
+  { name: 'Gopali Pitha', url: 'https://gopalipitha.com', category: 'landing-pages', image: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&h=250&fit=crop' },
+  { name: 'Chandura', url: 'https://chandura.com', category: 'landing-pages', image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=250&fit=crop' },
+  { name: 'Trendy Book BD', url: 'https://trendybookbd.com', category: 'landing-pages', image: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400&h=250&fit=crop' },
+  { name: 'Barakah Publication', url: 'https://barakahpublication.shop', category: 'landing-pages', image: 'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400&h=250&fit=crop' },
+  { name: 'Masud Telecom BD', url: 'https://masudtelecombd.com', category: 'landing-pages', image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&h=250&fit=crop' },
+  { name: 'Sakura Agency', url: 'https://www.sakura.agency', category: 'landing-pages', image: 'https://images.unsplash.com/photo-1522542550221-31fd8575f54a?w=400&h=250&fit=crop' },
+  { name: 'Kids Dream Drape', url: 'https://kids.dreamdrapebd.com', category: 'landing-pages', image: 'https://images.unsplash.com/photo-1596870230751-ebdfce98ec42?w=400&h=250&fit=crop' },
 ];
 
 const Portfolio = () => {
@@ -94,9 +95,10 @@ const Portfolio = () => {
               onClick={() => setActiveCategory(category)}
               className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                 activeCategory === category
-                  ? 'bg-gradient-primary text-primary-foreground'
+                  ? 'bg-gradient-primary text-primary-foreground shadow-lg'
                   : 'bg-secondary text-muted-foreground hover:bg-secondary/80'
               }`}
+              style={activeCategory === category ? { boxShadow: 'var(--shadow-glow)' } : {}}
             >
               {category === 'all' ? 'All Projects' : category === 'websites' ? 'Websites' : 'Landing Pages'}
             </button>
@@ -107,28 +109,39 @@ const Portfolio = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {filteredProjects.map((project) => (
             <a
-              key={project.url}
+              key={project.url + project.name}
               href={project.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="project-card glass-card p-6 card-hover group"
+              className="project-card professional-card overflow-hidden group"
             >
-              <div className="flex items-center justify-between mb-4">
-                <span className={`text-xs font-medium px-3 py-1 rounded-full ${
-                  project.category === 'websites' 
-                    ? 'bg-primary/20 text-primary' 
-                    : 'bg-accent/20 text-accent'
-                }`}>
-                  {project.category === 'websites' ? 'Website' : 'Landing Page'}
-                </span>
-                <ExternalLink size={18} className="text-muted-foreground group-hover:text-primary transition-colors" />
+              {/* Project Image */}
+              <div className="aspect-video overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.name}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
               </div>
-              <h3 className="font-bold text-lg group-hover:text-primary transition-colors">
-                {project.name}
-              </h3>
-              <p className="text-muted-foreground text-sm mt-2 truncate">
-                {project.url.replace('https://', '')}
-              </p>
+
+              <div className="p-5">
+                <div className="flex items-center justify-between mb-3">
+                  <span className={`text-xs font-medium px-3 py-1 rounded-full ${
+                    project.category === 'websites' 
+                      ? 'bg-primary/20 text-primary' 
+                      : 'bg-accent/20 text-accent'
+                  }`}>
+                    {project.category === 'websites' ? 'Website' : 'Landing Page'}
+                  </span>
+                  <ExternalLink size={18} className="text-muted-foreground group-hover:text-primary transition-colors" />
+                </div>
+                <h3 className="font-bold text-lg group-hover:text-primary transition-colors">
+                  {project.name}
+                </h3>
+                <p className="text-muted-foreground text-sm mt-2 truncate">
+                  {project.url.replace('https://', '')}
+                </p>
+              </div>
             </a>
           ))}
         </div>

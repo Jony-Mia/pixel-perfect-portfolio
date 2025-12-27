@@ -16,7 +16,7 @@ import royal from '@/assets/royal.png'
 
 gsap.registerPlugin(ScrollTrigger);
 
-type Category = 'all' | 'websites' | 'landing-pages';
+type Category = 'all' | 'Ecommerce' | 'landing-pages';
 
 interface Project {
   name: string;

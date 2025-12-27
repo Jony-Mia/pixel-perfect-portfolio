@@ -6,58 +6,58 @@
 
 @layer base {
   :root {
-    --background: 220 20% 97%;
-    --foreground: 220 40% 10%;
+    --background: 220 25% 96%;
+    --foreground: 220 50% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 40% 10%;
+    --card-foreground: 220 50% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 40% 10%;
+    --popover-foreground: 220 50% 12%;
 
-    --primary: 200 100% 50%;
-    --primary-foreground: 220 40% 5%;
+    --primary: 200 100% 45%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 20% 92%;
-    --secondary-foreground: 220 40% 20%;
+    --secondary: 220 25% 90%;
+    --secondary-foreground: 220 50% 15%;
 
-    --muted: 220 15% 88%;
-    --muted-foreground: 220 15% 40%;
+    --muted: 220 20% 92%;
+    --muted-foreground: 220 20% 35%;
 
-    --accent: 145 80% 45%;
-    --accent-foreground: 220 40% 5%;
+    --accent: 145 80% 38%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84.2% 55%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 220 20% 85%;
-    --input: 220 20% 85%;
-    --ring: 200 100% 50%;
+    --border: 220 25% 82%;
+    --input: 220 25% 82%;
+    --ring: 200 100% 45%;
 
     --radius: 0.75rem;
 
-    /* Custom design tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(200, 100%, 50%) 0%, hsl(145, 80%, 45%) 100%);
-    --gradient-hero: linear-gradient(180deg, hsl(220, 20%, 97%) 0%, hsl(220, 20%, 92%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0, 0%, 100%) 0%, hsl(220, 20%, 97%) 100%);
-    --gradient-glow: linear-gradient(135deg, hsl(200, 100%, 50%) 0%, hsl(280, 70%, 60%) 50%, hsl(145, 80%, 45%) 100%);
+    /* Custom design tokens for light mode */
+    --gradient-primary: linear-gradient(135deg, hsl(200, 100%, 45%) 0%, hsl(145, 80%, 38%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(220, 25%, 96%) 0%, hsl(220, 30%, 92%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0, 0%, 100%) 0%, hsl(220, 25%, 96%) 100%);
+    --gradient-glow: linear-gradient(135deg, hsl(200, 100%, 45%) 0%, hsl(280, 70%, 55%) 50%, hsl(145, 80%, 38%) 100%);
     
-    --shadow-glow: 0 0 40px hsl(200 100% 50% / 0.3);
-    --shadow-glow-strong: 0 0 60px hsl(200 100% 50% / 0.5);
-    --shadow-card: 0 10px 40px hsl(220 20% 80% / 0.3);
+    --shadow-glow: 0 0 30px hsl(200 100% 45% / 0.25);
+    --shadow-glow-strong: 0 0 50px hsl(200 100% 45% / 0.4);
+    --shadow-card: 0 4px 20px hsl(220 30% 70% / 0.2), 0 8px 40px hsl(220 30% 70% / 0.15);
     
-    --neon-blue: hsl(200, 100%, 50%);
-    --neon-green: hsl(145, 80%, 45%);
-    --neon-purple: hsl(280, 70%, 60%);
+    --neon-blue: hsl(200, 100%, 45%);
+    --neon-green: hsl(145, 80%, 38%);
+    --neon-purple: hsl(280, 70%, 55%);
 
     --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 220 40% 10%;
-    --sidebar-primary: 200 100% 50%;
-    --sidebar-primary-foreground: 220 40% 5%;
-    --sidebar-accent: 220 20% 92%;
-    --sidebar-accent-foreground: 220 40% 10%;
-    --sidebar-border: 220 20% 85%;
-    --sidebar-ring: 200 100% 50%;
+    --sidebar-foreground: 220 50% 12%;
+    --sidebar-primary: 200 100% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 25% 90%;
+    --sidebar-accent-foreground: 220 50% 12%;
+    --sidebar-border: 220 25% 82%;
+    --sidebar-ring: 200 100% 45%;
   }
 
   .dark {
@@ -284,6 +284,24 @@
 
   .social-threads {
     @apply bg-[#000000] text-white hover:shadow-lg;
+  }
+
+  /* Light mode specific overrides */
+  :root .glass-card {
+    @apply bg-card/95 backdrop-blur-xl border border-border shadow-lg;
+  }
+
+  :root .professional-card {
+    @apply bg-card border border-border shadow-md;
+  }
+
+  /* Ensure sponsor logos are visible in light mode */
+  :root .sponsor-logo img {
+    filter: brightness(0.2);
+  }
+
+  :root .sponsor-logo:hover img {
+    filter: none;
   }
 }
 

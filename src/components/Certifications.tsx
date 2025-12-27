@@ -57,15 +57,15 @@ const Certifications = () => {
               <div className="absolute -inset-2 bg-gradient-to-r from-primary via-neon-purple to-accent rounded-2xl opacity-75 blur-lg group-hover:opacity-100 transition-opacity duration-500 animate-pulse-glow" />
               <div className="absolute -inset-1 bg-gradient-to-r from-primary via-neon-purple to-accent rounded-2xl opacity-50" style={{ animation: 'certificate-rotate 4s linear infinite' }} />
               
-              <div className="relative glass-card p-2 rounded-2xl overflow-hidden">
+              <div className="relative glass-card p-2 rounded-2xl overflow-hidden shadow-xl">
                 <img
                   src={cert.image}
                   alt={cert.title}
                   className="w-80 md:w-96 h-auto rounded-xl"
                 />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background via-background/80 to-transparent p-4">
-                  <h3 className="font-bold text-lg">{cert.title}</h3>
-                  <p className="text-primary text-sm">{cert.issuer} • {cert.year}</p>
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-card via-card/90 to-transparent p-4">
+                  <h3 className="font-bold text-lg text-card-foreground">{cert.title}</h3>
+                  <p className="text-primary text-sm font-medium">{cert.issuer} • {cert.year}</p>
                 </div>
               </div>
             </div>

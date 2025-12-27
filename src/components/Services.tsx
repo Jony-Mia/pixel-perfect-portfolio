@@ -96,8 +96,8 @@ const Services = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map(({ icon: Icon, title, description }) => (
             <div key={title} className="service-card glass-card p-6 card-hover group">
-              <div className="w-14 h-14 rounded-xl bg-gradient-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <Icon className="text-primary-foreground" size={24} />
+              <div className="w-14 h-14 rounded-xl bg-gradient-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-md">
+                <Icon className="text-white" size={24} />
               </div>
               <h3 className="font-bold text-lg mb-3 group-hover:text-primary transition-colors">
                 {title}

@@ -105,7 +105,7 @@ const Hero = () => {
                 <p className="text-muted-foreground text-sm">{t('hero.projects')}</p>
               </div>
               <div className="text-center">
-                <p className="text-4xl font-bold text-gradient">50+</p>
+                <p className="text-4xl font-bold text-gradient">85+</p>
                 <p className="text-muted-foreground text-sm">{t('hero.clients')}</p>
               </div>
             </div>

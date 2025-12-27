@@ -52,8 +52,8 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         neon: {
-          cyan: "hsl(175, 85%, 50%)",
-          green: "hsl(145, 80%, 50%)",
+          blue: "hsl(200, 100%, 50%)",
+          green: "hsl(145, 80%, 45%)",
           purple: "hsl(280, 70%, 60%)",
         },
         sidebar: {

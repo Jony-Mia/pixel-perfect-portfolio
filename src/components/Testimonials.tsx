@@ -117,7 +117,7 @@ const Testimonials = () => {
           >
             {testimonials.map((testimonial, index) => (
               <SwiperSlide key={index}>
-                <div className="glass-card p-6 h-full">
+                <div className="professional-card p-6 h-full border-2 border-border hover:border-primary/50 transition-colors">
                   <Quote className="text-primary/30 mb-4" size={40} />
                   
                   <p className="text-muted-foreground mb-6 leading-relaxed">
@@ -134,7 +134,7 @@ const Testimonials = () => {
                     <img
                       src={testimonial.image}
                       alt={testimonial.name}
-                      className="w-14 h-14 rounded-full object-cover"
+                      className="w-14 h-14 rounded-full object-cover border-2 border-primary/30"
                     />
                     <div>
                       <h4 className="font-bold">{testimonial.name}</h4>

@@ -6,6 +6,61 @@
 
 @layer base {
   :root {
+    --background: 220 20% 97%;
+    --foreground: 220 40% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 40% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 40% 10%;
+
+    --primary: 200 100% 50%;
+    --primary-foreground: 220 40% 5%;
+
+    --secondary: 220 20% 92%;
+    --secondary-foreground: 220 40% 20%;
+
+    --muted: 220 15% 88%;
+    --muted-foreground: 220 15% 40%;
+
+    --accent: 145 80% 45%;
+    --accent-foreground: 220 40% 5%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 20% 85%;
+    --input: 220 20% 85%;
+    --ring: 200 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom design tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(200, 100%, 50%) 0%, hsl(145, 80%, 45%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(220, 20%, 97%) 0%, hsl(220, 20%, 92%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0, 0%, 100%) 0%, hsl(220, 20%, 97%) 100%);
+    --gradient-glow: linear-gradient(135deg, hsl(200, 100%, 50%) 0%, hsl(280, 70%, 60%) 50%, hsl(145, 80%, 45%) 100%);
+    
+    --shadow-glow: 0 0 40px hsl(200 100% 50% / 0.3);
+    --shadow-glow-strong: 0 0 60px hsl(200 100% 50% / 0.5);
+    --shadow-card: 0 10px 40px hsl(220 20% 80% / 0.3);
+    
+    --neon-blue: hsl(200, 100%, 50%);
+    --neon-green: hsl(145, 80%, 45%);
+    --neon-purple: hsl(280, 70%, 60%);
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 220 40% 10%;
+    --sidebar-primary: 200 100% 50%;
+    --sidebar-primary-foreground: 220 40% 5%;
+    --sidebar-accent: 220 20% 92%;
+    --sidebar-accent-foreground: 220 40% 10%;
+    --sidebar-border: 220 20% 85%;
+    --sidebar-ring: 200 100% 50%;
+  }
+
+  .dark {
     --background: 220 40% 5%;
     --foreground: 210 40% 98%;
 
@@ -15,7 +70,7 @@
     --popover: 220 35% 8%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 175 85% 50%;
+    --primary: 200 100% 50%;
     --primary-foreground: 220 40% 5%;
 
     --secondary: 220 30% 15%;
@@ -24,7 +79,7 @@
     --muted: 220 25% 12%;
     --muted-foreground: 215 20% 60%;
 
-    --accent: 145 80% 50%;
+    --accent: 145 80% 45%;
     --accent-foreground: 220 40% 5%;
 
     --destructive: 0 84.2% 60.2%;
@@ -32,32 +87,30 @@
 
     --border: 220 25% 18%;
     --input: 220 25% 18%;
-    --ring: 175 85% 50%;
+    --ring: 200 100% 50%;
 
-    --radius: 0.75rem;
-
-    /* Custom design tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(175, 85%, 50%) 0%, hsl(145, 80%, 50%) 100%);
+    /* Custom design tokens for dark */
+    --gradient-primary: linear-gradient(135deg, hsl(200, 100%, 50%) 0%, hsl(145, 80%, 45%) 100%);
     --gradient-hero: linear-gradient(180deg, hsl(220, 40%, 5%) 0%, hsl(220, 35%, 10%) 100%);
     --gradient-card: linear-gradient(145deg, hsl(220, 35%, 10%) 0%, hsl(220, 40%, 7%) 100%);
-    --gradient-glow: linear-gradient(135deg, hsl(175, 85%, 50%) 0%, hsl(280, 70%, 60%) 50%, hsl(145, 80%, 50%) 100%);
+    --gradient-glow: linear-gradient(135deg, hsl(200, 100%, 50%) 0%, hsl(280, 70%, 60%) 50%, hsl(145, 80%, 45%) 100%);
     
-    --shadow-glow: 0 0 40px hsl(175 85% 50% / 0.3);
-    --shadow-glow-strong: 0 0 60px hsl(175 85% 50% / 0.5);
+    --shadow-glow: 0 0 40px hsl(200 100% 50% / 0.3);
+    --shadow-glow-strong: 0 0 60px hsl(200 100% 50% / 0.5);
     --shadow-card: 0 10px 40px hsl(220 40% 2% / 0.5);
     
-    --neon-cyan: hsl(175, 85%, 50%);
-    --neon-green: hsl(145, 80%, 50%);
+    --neon-blue: hsl(200, 100%, 50%);
+    --neon-green: hsl(145, 80%, 45%);
     --neon-purple: hsl(280, 70%, 60%);
 
     --sidebar-background: 220 40% 5%;
     --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 175 85% 50%;
+    --sidebar-primary: 200 100% 50%;
     --sidebar-primary-foreground: 220 40% 5%;
     --sidebar-accent: 220 30% 15%;
     --sidebar-accent-foreground: 210 40% 98%;
     --sidebar-border: 220 25% 18%;
-    --sidebar-ring: 175 85% 50%;
+    --sidebar-ring: 200 100% 50%;
   }
 }
 
@@ -71,7 +124,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-body antialiased;
+    @apply bg-background text-foreground font-body antialiased transition-colors duration-300;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -120,9 +173,9 @@
   }
 
   .neon-text {
-    text-shadow: 0 0 10px hsl(175 85% 50% / 0.8),
-                 0 0 20px hsl(175 85% 50% / 0.6),
-                 0 0 40px hsl(175 85% 50% / 0.4);
+    text-shadow: 0 0 10px hsl(200 100% 50% / 0.8),
+                 0 0 20px hsl(200 100% 50% / 0.6),
+                 0 0 40px hsl(200 100% 50% / 0.4);
   }
 
   .card-hover {
@@ -176,7 +229,16 @@
   }
 
   .glass-card {
-    @apply bg-card/50 backdrop-blur-xl border border-border/50 rounded-2xl;
+    @apply bg-card/80 backdrop-blur-xl border border-border rounded-2xl shadow-lg;
+  }
+
+  .professional-card {
+    @apply bg-card border border-border rounded-2xl shadow-lg transition-all duration-300;
+  }
+
+  .professional-card:hover {
+    @apply shadow-xl;
+    border-color: hsl(var(--primary) / 0.5);
   }
 
   .certificate-glow {
@@ -192,6 +254,36 @@
     z-index: -1;
     animation: certificate-rotate 4s linear infinite;
     filter: blur(15px);
+  }
+
+  /* Social icon colors */
+  .social-facebook {
+    @apply bg-[#1877F2] text-white hover:shadow-lg;
+  }
+
+  .social-instagram {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    @apply text-white hover:shadow-lg;
+  }
+
+  .social-linkedin {
+    @apply bg-[#0A66C2] text-white hover:shadow-lg;
+  }
+
+  .social-twitter {
+    @apply bg-[#1DA1F2] text-white hover:shadow-lg;
+  }
+
+  .social-youtube {
+    @apply bg-[#FF0000] text-white hover:shadow-lg;
+  }
+
+  .social-tiktok {
+    @apply bg-[#000000] text-white hover:shadow-lg;
+  }
+
+  .social-threads {
+    @apply bg-[#000000] text-white hover:shadow-lg;
   }
 }
 

@@ -44,8 +44,8 @@ const Contact = () => {
         <div className="grid  gap-12 justify-center mx-auto">
           {/* Contact Info */}
           <div className="lg:col-span-2 contact-content">
-            <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
-            <p className="text-muted-foreground mb-8">
+            <h3 className="text-2xl text-center font-bold mb-6">Contact Information</h3>
+            <p className="text-muted-foreground text-center mb-8">
               Feel free to reach out to me through any of these channels. 
               I'll get back to you as soon as possible!
             </p>

@@ -8,14 +8,16 @@ gsap.registerPlugin(ScrollTrigger);
 const pricingPlans = [
   {
     name: 'Starter',
-    price: '$299',
+    price: '$35',
     description: 'Perfect for small businesses and personal projects',
     features: [
       'Single Page Website',
       'Responsive Design',
-      'Basic SEO Setup',
+      // 'Basic SEO Setup',
+      'WooCommerce Integration',
+      // 'Pixel/GTM Setup',
       'Contact Form',
-      '3 Revisions',
+      'Unlimited Revision',
       '7 Days Delivery',
       '30 Days Support',
     ],
@@ -23,7 +25,7 @@ const pricingPlans = [
   },
   {
     name: 'Business',
-    price: '$599',
+    price: '$120',
     description: 'Ideal for growing businesses and e-commerce',
     features: [
       'Multi-page Website (up to 10)',
@@ -31,7 +33,10 @@ const pricingPlans = [
       'Premium Theme Customization',
       'Advanced SEO Optimization',
       'Speed Optimization',
-      '5 Revisions',
+      'Unlimited Revisions',
+      'Security',
+      'Products Upload',
+      'Full Ecommerce Setup',
       '14 Days Delivery',
       '60 Days Support',
     ],
@@ -39,9 +44,10 @@ const pricingPlans = [
   },
   {
     name: 'Professional',
-    price: '$999',
+    price: '$199',
     description: 'Complete solution for enterprises and complex projects',
     features: [
+
       'Unlimited Pages',
       'Full E-commerce Setup',
       'Custom Plugin Development',
@@ -49,6 +55,7 @@ const pricingPlans = [
       'Premium SEO Package',
       'Performance Optimization',
       'Unlimited Revisions',
+      'With Starter and Business Package',
       '30 Days Delivery',
       '90 Days Support',
       'Priority Support',
@@ -108,7 +115,7 @@ const Pricing = () => {
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                  <span className="bg-gradient-primary text-white text-sm font-semibold px-4 py-1 rounded-full flex items-center gap-1 shadow-md">
+                  <span className="bg-gradient-primary text-black text-sm font-semibold px-4 py-1 rounded-full flex items-center gap-1 shadow-md">
                     <Star size={14} /> Most Popular
                   </span>
                 </div>

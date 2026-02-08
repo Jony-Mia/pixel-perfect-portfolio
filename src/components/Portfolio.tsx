@@ -12,7 +12,11 @@ import homely from '@/assets/Homely.png';
 import solutionBD from '@/assets/image3.png';
 import vitalixBD from '@/assets/Vitalix-Ananta.png';
 import divineAroma from '@/assets/image4.png';
-import royal from '@/assets/royal.png'
+import royal from '@/assets/royal.png';
+import rafaOnline from "@/assets/Screenshot_4.png";
+import cargoShipping from "@/assets/Screenshot_5.png";
+import bisNogor from "@/assets/1080-bag-ash-890-tk-4.png"
+import sakura from "@/assets/Screenshot_6.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -85,18 +89,19 @@ const projects: Project[] = [
     name: 'Bismillah Cargo', 
     url: 'https://bismillahcargo.com.bd', 
     category: 'websites', 
-    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&h=250&fit=crop' 
+    image: cargoShipping 
   },
   { 
     name: 'Rafaa Online',
     url: 'https://rafaaonline.com', 
     category: 'websites', 
-    image: 'https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=400&h=250&fit=crop' },
+    image: rafaOnline,
+  },
   { 
     name: 'Bismillah Nogor', 
     url: 'https://bismillahnogor.com', 
     category: 'websites', 
-    image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=250&fit=crop' 
+    image: bisNogor
   },
   { 
     name: 'Solution BD Landing', 
@@ -150,7 +155,7 @@ const projects: Project[] = [
     name: 'Sakura Agency', 
     url: 'https://www.sakura.agency', 
     category: 'landing-pages', 
-    image: 'https://images.unsplash.com/photo-1522542550221-31fd8575f54a?w=400&h=250&fit=crop' 
+    image: sakura
   },
   { 
     name: 'Kids Dream Drape',

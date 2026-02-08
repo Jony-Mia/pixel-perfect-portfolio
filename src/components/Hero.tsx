@@ -24,13 +24,13 @@ const XIcon = () => (
 );
 
 const socialLinks = [
-  { icon: Facebook, href: '#', label: 'Facebook', colorClass: 'social-facebook' },
-  { icon: Instagram, href: '#', label: 'Instagram', colorClass: 'social-instagram' },
-  { icon: Linkedin, href: '#', label: 'LinkedIn', colorClass: 'social-linkedin' },
-  { CustomIcon: XIcon, href: '#', label: 'X (Twitter)', colorClass: 'social-twitter' },
-  { icon: Youtube, href: '#', label: 'YouTube', colorClass: 'social-youtube' },
-  { CustomIcon: TikTokIcon, href: '#', label: 'TikTok', colorClass: 'social-tiktok' },
-  { CustomIcon: ThreadsIcon, href: '#', label: 'Threads', colorClass: 'social-threads' },
+  { icon: Facebook, href: 'https://www.facebook.com/asm.jony.2024', label: 'Facebook', colorClass: 'social-facebook' },
+  { icon: Instagram, href: 'https://www.instagram.com/jonymia321/', label: 'Instagram', colorClass: 'social-instagram' },
+  { icon: Linkedin, href: 'https://www.linkedin.com/in/jony-mia-243ab4334/', label: 'LinkedIn', colorClass: 'social-linkedin' },
+  { CustomIcon: XIcon, href: 'https://x.com/JonyMia220812', label: 'X (Twitter)', colorClass: 'social-twitter' },
+  { icon: Youtube, href: 'https://www.youtube.com/@jonymia1972', label: 'YouTube', colorClass: 'social-youtube' },
+ // { CustomIcon: TikTokIcon, href: '#', label: 'TikTok', colorClass: 'social-tiktok' },
+  // { CustomIcon: ThreadsIcon, href: '#', label: 'Threads', colorClass: 'social-threads' },
 ];
 
 const Hero = () => {
@@ -70,7 +70,7 @@ const Hero = () => {
     <section
       id="home"
       ref={heroRef}
-      className="min-h-screen flex items-center pt-20 relative overflow-hidden"
+      className="min-h-screen flex items-center pt-20  relative overflow-hidden"
     >
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-hero" />
@@ -121,7 +121,7 @@ const Hero = () => {
             </div>
 
             {/* Social Links */}
-            <div className="flex flex-wrap gap-3">
+            <div className="flex ms-3 flex-wrap gap-3">
               {socialLinks.map(({ icon: Icon, CustomIcon, href, label, colorClass }) => (
                 <a
                   key={label}

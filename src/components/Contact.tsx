@@ -50,8 +50,8 @@ const Contact = () => {
               I'll get back to you as soon as possible!
             </p>
 
-            <div className="gap-5 flex">
-              <div className="professional-card p-4 flex items-center gap-4">
+            <div className="gap-5 sm:flex-nowrap  flex-wrap flex">
+              <div className="professional-card p-4 w-[100%] flex items-center gap-4">
                 <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center flex-shrink-0">
                   <Mail className="text-primary-foreground" size={22} />
                 </div>
@@ -63,7 +63,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="professional-card p-4 flex items-center gap-4">
+              <div className="professional-card p-4 w-[100%] flex items-center gap-4">
                 <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center flex-shrink-0">
                   <Phone className="text-primary-foreground" size={22} />
                 </div>
@@ -75,7 +75,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="professional-card p-4 flex items-center gap-4">
+              <div className="professional-card w-[100%] p-4 flex items-center gap-4">
                 <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center flex-shrink-0">
                   <MapPin className="text-primary-foreground" size={22} />
                 </div>
@@ -95,7 +95,7 @@ const Contact = () => {
                 </div>
               </div> */}
 
-              <div className="professional-card p-4 flex items-center gap-4">
+              <div className="professional-card w-[100%] p-4 flex items-center gap-4">
                 <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center flex-shrink-0">
                   <Globe className="text-primary-foreground" size={22} />
                 </div>

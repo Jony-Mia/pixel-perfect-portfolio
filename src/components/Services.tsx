@@ -12,6 +12,8 @@ import {
   Smartphone
 } from 'lucide-react';
 
+
+
 gsap.registerPlugin(ScrollTrigger);
 
 const services = [

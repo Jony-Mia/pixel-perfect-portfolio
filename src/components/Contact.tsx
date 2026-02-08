@@ -41,7 +41,7 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-5 gap-12 max-w-6xl mx-auto">
+        <div className="grid  gap-12 justify-center mx-auto">
           {/* Contact Info */}
           <div className="lg:col-span-2 contact-content">
             <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
@@ -50,15 +50,15 @@ const Contact = () => {
               I'll get back to you as soon as possible!
             </p>
 
-            <div className="space-y-4">
+            <div className="gap-5 flex">
               <div className="professional-card p-4 flex items-center gap-4">
                 <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center flex-shrink-0">
                   <Mail className="text-primary-foreground" size={22} />
                 </div>
                 <div>
                   <p className="text-muted-foreground text-sm">Email</p>
-                  <a href="mailto:jony@example.com" className="font-semibold hover:text-primary transition-colors">
-                    jony@example.com
+                  <a href="mailto:ajonymia321@gmail.com" className="font-semibold hover:text-primary transition-colors">
+                    ajonymia321@gmail.com
                   </a>
                 </div>
               </div>
@@ -69,8 +69,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-muted-foreground text-sm">Phone</p>
-                  <a href="tel:+8801XXXXXXXXX" className="font-semibold hover:text-primary transition-colors">
-                    +880 1XXX-XXXXXX
+                  <a href="https://wa.me/+8801770522886" className="font-semibold hover:text-primary transition-colors">
+                    +8801770522886
                   </a>
                 </div>
               </div>
@@ -84,7 +84,7 @@ const Contact = () => {
                   <p className="font-semibold">Bangladesh</p>
                 </div>
               </div>
-
+{/* 
               <div className="professional-card p-4 flex items-center gap-4">
                 <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center flex-shrink-0">
                   <Clock className="text-primary-foreground" size={22} />
@@ -93,7 +93,7 @@ const Contact = () => {
                   <p className="text-muted-foreground text-sm">Availability</p>
                   <p className="font-semibold">Sun - Thu, 9AM - 6PM</p>
                 </div>
-              </div>
+              </div> */}
 
               <div className="professional-card p-4 flex items-center gap-4">
                 <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center flex-shrink-0">
@@ -108,7 +108,7 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="lg:col-span-3 contact-content">
+          {/* <div className="lg:col-span-3 contact-content">
             <div className="professional-card p-8">
               <h3 className="text-xl font-bold mb-6">Send a Message</h3>
               <form className="space-y-5">
@@ -167,7 +167,7 @@ const Contact = () => {
                 </button>
               </form>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

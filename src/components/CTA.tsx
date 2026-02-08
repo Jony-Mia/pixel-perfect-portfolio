@@ -52,7 +52,7 @@ const CTA = () => {
             </p>
             <button
               onClick={scrollToContact}
-              className="inline-flex items-center gap-2 bg-white text-foreground font-semibold px-8 py-4 rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-300"
+              className="inline-flex items-center gap-2 bg-white text-black font-semibold px-8 py-4 rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-300"
             >
               Start Your Project <ArrowRight size={20} />
             </button>

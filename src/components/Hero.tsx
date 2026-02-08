@@ -70,7 +70,7 @@ const Hero = () => {
     <section
       id="home"
       ref={heroRef}
-      className="min-h-screen flex items-center pt-20  relative overflow-hidden"
+      className="min-h-screen flex items-center px-20  relative overflow-hidden"
     >
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-hero" />

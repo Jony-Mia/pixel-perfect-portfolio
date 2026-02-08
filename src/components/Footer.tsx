@@ -31,15 +31,14 @@ const XIcon = () => (
 );
 
 const socialLinks = [
-  { icon: Facebook, href: '#', label: 'Facebook', colorClass: 'social-facebook' },
-  { icon: Instagram, href: '#', label: 'Instagram', colorClass: 'social-instagram' },
-  { icon: Linkedin, href: '#', label: 'LinkedIn', colorClass: 'social-linkedin' },
-  { CustomIcon: XIcon, href: '#', label: 'X (Twitter)', colorClass: 'social-twitter' },
-  { icon: Youtube, href: '#', label: 'YouTube', colorClass: 'social-youtube' },
-  { CustomIcon: TikTokIcon, href: '#', label: 'TikTok', colorClass: 'social-tiktok' },
-  { CustomIcon: ThreadsIcon, href: '#', label: 'Threads', colorClass: 'social-threads' },
+  { icon: Facebook, href: 'https://www.facebook.com/asm.jony.2024', label: 'Facebook', colorClass: 'social-facebook' },
+  { icon: Instagram, href: 'https://www.instagram.com/jonymia321/', label: 'Instagram', colorClass: 'social-instagram' },
+  { icon: Linkedin, href: 'https://www.linkedin.com/in/jony-mia-243ab4334/', label: 'LinkedIn', colorClass: 'social-linkedin' },
+  { CustomIcon: XIcon, href: 'https://x.com/JonyMia220812', label: 'X (Twitter)', colorClass: 'social-twitter' },
+  { icon: Youtube, href: 'https://www.youtube.com/@jonymia1972', label: 'YouTube', colorClass: 'social-youtube' },
+ // { CustomIcon: TikTokIcon, href: '#', label: 'TikTok', colorClass: 'social-tiktok' },
+  // { CustomIcon: ThreadsIcon, href: '#', label: 'Threads', colorClass: 'social-threads' },
 ];
-
 const quickLinks = [
   { name: 'Home', href: '#home' },
   { name: 'About', href: '#about' },

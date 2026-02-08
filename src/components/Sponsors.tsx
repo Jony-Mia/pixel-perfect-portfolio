@@ -9,9 +9,9 @@ const sponsors = [
   { name: 'Microsoft', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg' },
   { name: 'Amazon', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg' },
   { name: 'WordPress', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg' },
-  { name: 'Apple', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg' },
-  { name: 'Samsung', logo: 'https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg' },
-  { name: 'Huawei', logo: 'https://upload.wikimedia.org/wikipedia/commons/e/e8/Huawei_Logo.svg' },
+  // { name: 'Apple', logo: 'https://cdn-icons-png.flaticon.com/128/2175/2175370.png' },
+  { name: 'Samsung', logo: 'https://cdn-icons-png.flaticon.com/128/882/882747.png' },
+  { name: 'Huawei', logo: 'https://cdn-icons-png.flaticon.com/128/882/882738.png' },
   { name: 'Netflix', logo: 'https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg' },
 ];
 
@@ -22,12 +22,12 @@ const Sponsors = () => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         '.sponsor-logo',
-        { opacity: 0, scale: 0.8 },
+        { opacity: 1, scale: 0.8 },
         {
           opacity: 1,
           scale: 1,
           duration: 0.5,
-          stagger: 0.1,
+           stagger: 0.1,
           scrollTrigger: {
             trigger: sectionRef.current,
             start: 'top 80%',
@@ -50,7 +50,7 @@ const Sponsors = () => {
           {sponsors.map((sponsor) => (
             <div
               key={sponsor.name}
-              className="sponsor-logo w-20 h-12 md:w-24 md:h-14 flex items-center justify-center opacity-60 hover:opacity-100 transition-all duration-300 grayscale hover:grayscale-0 dark:invert-0"
+              className=" w-20 h-12 md:w-24 md:h-14 flex items-center justify-center opacity-100 hover:opacity-100 transition-all duration-300 grayscale-0 hover:grayscale-0 dark:invert-0"
             >
               <img
                 src={sponsor.logo}

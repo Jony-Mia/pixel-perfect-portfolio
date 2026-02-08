@@ -45,7 +45,7 @@ const Index = () => {
         <CTA />
         <Contact />
         <Footer />
-        <LanguageToggle />
+        {/* <LanguageToggle /> */}
         <ThemeToggle />
       </div>
     </LanguageProvider>

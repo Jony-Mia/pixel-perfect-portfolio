@@ -55,7 +55,7 @@ const Certifications = () => {
             <div key={index} className="relative group">
               {/* Glowing Neon Border Animation */}
               <div className="absolute -inset-2 bg-gradient-to-r from-primary via-neon-purple to-accent rounded-2xl opacity-75 blur-lg group-hover:opacity-100 transition-opacity duration-500 animate-pulse-glow" />
-              <div className="absolute -inset-1 bg-gradient-to-r from-primary via-neon-purple to-accent rounded-2xl opacity-50" style={{ animation: 'certificate-rotate 4s linear infinite' }} />
+              <div className="absolute -inset-1 bg-gradient-to-r from-primary via-neon-purple to-accent rounded-2xl opacity-50"/* style={{ animation: 'certificate-rotate 4s linear infinite' }}*/ />
               
               <div className="relative glass-card p-2 rounded-2xl overflow-hidden shadow-xl">
                 <img

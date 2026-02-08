@@ -13,7 +13,7 @@ const colorMap: Record<string, { start: string; end: string }> = {
   'ReactJS': { start: '#61DAFB', end: '#00D8FF' },
   'HTML': { start: '#E34F26', end: '#F16529' },
   'CSS': { start: '#264DE4', end: '#2965F1' },
-  'JavaScript': { start: '#F7DF1E', end: '#FFD700' },
+  'JavaScript': { start: '#f6be00', end: '#f6be00' },
   'TypeScript': { start: '#3178C6', end: '#007ACC' },
   'Tailwind CSS': { start: '#06B6D4', end: '#38BDF8' },
   'PHP': { start: '#777BB4', end: '#8993BE' },
@@ -96,7 +96,6 @@ const CircularProgress = ({ percentage, name, size = 120 }: CircularProgressProp
             strokeDasharray={circumference}
             strokeDashoffset={offset}
             className="transition-all duration-300"
-            style={{ filter: `drop-shadow(0 0 6px ${colors.start})` }}
           />
           {/* Gradient definition */}
           <defs>

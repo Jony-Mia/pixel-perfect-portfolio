@@ -40,7 +40,7 @@ const Index = () => {
         <Testimonials />
         <Certifications />
         <PersonalPhotos />
-        <Gallery />
+        {/* <Gallery /> */}
         <Sponsors />
         <CTA />
         <Contact />

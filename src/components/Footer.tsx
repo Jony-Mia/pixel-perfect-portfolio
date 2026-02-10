@@ -30,15 +30,51 @@ const XIcon = () => (
   </svg>
 );
 
-const socialLinks = [
-  { icon: Facebook, href: 'https://www.facebook.com/asm.jony.2024', label: 'Facebook', colorClass: 'social-facebook' },
-  { icon: Instagram, href: 'https://www.instagram.com/jonymia321/', label: 'Instagram', colorClass: 'social-instagram' },
-  { icon: Linkedin, href: 'https://www.linkedin.com/in/jony-mia-243ab4334/', label: 'LinkedIn', colorClass: 'social-linkedin' },
-  { CustomIcon: XIcon, href: 'https://x.com/JonyMia220812', label: 'X (Twitter)', colorClass: 'social-twitter' },
+/*const socialLinks = [
+  { icon: 'https://cdn-icons-png.flaticon.com/128/15047/15047435.png', href: 'https://www.facebook.com/asm.jony.2024', label: 'Facebook', colorClass: 'social-facebook' },
+  { icon: 'https://cdn-icons-png.flaticon.com/128/174/174855.png', href: 'https://www.instagram.com/jonymia321/', label: 'Instagram', colorClass: 'social-instagram' },
+  { icon: 'https://cdn-icons-png.flaticon.com/128/3991/3991775.png', href: 'https://www.linkedin.com/in/jony-mia-243ab4334/', label: 'LinkedIn', colorClass: 'social-linkedin' },
+  { icon: XIcon, href: 'https://x.com/JonyMia220812', label: 'X (Twitter)', colorClass: 'social-twitter' },
   { icon: Youtube, href: 'https://www.youtube.com/@jonymia1972', label: 'YouTube', colorClass: 'social-youtube' },
  // { CustomIcon: TikTokIcon, href: '#', label: 'TikTok', colorClass: 'social-tiktok' },
   // { CustomIcon: ThreadsIcon, href: '#', label: 'Threads', colorClass: 'social-threads' },
 ];
+*/
+const socialLinks = [
+  {
+    icon: 'https://cdn-icons-png.flaticon.com/128/15047/15047435.png',
+    href: 'https://www.facebook.com/asm.jony.2024',
+    label: 'Facebook',
+    //colorClass: 'social-facebook'
+  },
+  {
+    icon: 'https://cdn-icons-png.flaticon.com/128/174/174855.png',
+    href: 'https://www.instagram.com/jonymia321/',
+    label: 'Instagram',
+   // colorClass: 'social-instagram'
+  },
+  {
+    icon: 'https://cdn-icons-png.flaticon.com/128/3991/3991775.png',
+    href: 'https://www.linkedin.com/in/jony-mia-243ab4334/',
+    label: 'LinkedIn',
+    //colorClass: 'social-linkedin'
+  },
+  {
+    icon: 'https://cdn-icons-png.flaticon.com/128/5969/5969020.png',
+    href: 'https://x.com/JonyMia220812',
+    label: 'X (Twitter)',
+  //  colorClass: 'social-twitter'
+  },
+  {
+    icon: 'https://cdn-icons-png.flaticon.com/128/1384/1384060.png',
+    href: 'https://www.youtube.com/@jonymia1972',
+    label: 'YouTube',
+  //  colorClass: 'social-youtube'
+  },
+  // { CustomIcon: TikTokIcon, href: '#', label: 'TikTok', colorClass: 'social-tiktok' },
+  // { CustomIcon: ThreadsIcon, href: '#', label: 'Threads', colorClass: 'social-threads' },
+];
+
 const quickLinks = [
   { name: 'Home', href: '#home' },
   { name: 'About', href: '#about' },
@@ -78,7 +114,8 @@ const Footer = () => {
                   aria-label={label}
                   className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 ${colorClass}`}
                 >
-                  {Icon ? <Icon size={18} /> : CustomIcon && <CustomIcon />}
+                  {/* {Icon ? <Icon size={18} /> : CustomIcon && <CustomIcon />} */}
+                  <img src={`${Icon}`} width={28} alt="" />
                 </a>
               ))}
             </div>

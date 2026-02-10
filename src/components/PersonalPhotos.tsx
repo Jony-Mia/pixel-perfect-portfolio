@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 // Placeholder personal photos - you can replace with actual photos
 const personalPhotos = [
-  { src: 'https://scontent.fdac187-1.fna.fbcdn.net/v/t39.30808-1/502376387_580222371795217_7468370731717751658_n.jpg?stp=c111.111.858.858a_dst-jpg_s200x200_tt6&_nc_cat=106&ccb=1-7&_nc_sid=1d2534&_nc_ohc=WGYKx9PIxRkQ7kNvwHU-Jv6&_nc_oc=AdkcWob1YxN6kBD70r0_OiI9c6xwGVY6-70B2vpr3GsdGp5i0591fm-QC9PNvYMBd3U&_nc_zt=24&_nc_ht=scontent.fdac187-1.fna&_nc_gid=09KROb716gmWScBQ2a5mAg&oh=00_Aft67FxZ3A-QPbZomWDSg_bz29chJrcIdsjQVU_0RMjNzA&oe=698E99B2', alt: 'Personal Photo 1' },
+  // { src: 'https://scontent.fdac187-1.fna.fbcdn.net/v/t39.30808-1/502376387_580222371795217_7468370731717751658_n.jpg?stp=c111.111.858.858a_dst-jpg_s200x200_tt6&_nc_cat=106&ccb=1-7&_nc_sid=1d2534&_nc_ohc=WGYKx9PIxRkQ7kNvwHU-Jv6&_nc_oc=AdkcWob1YxN6kBD70r0_OiI9c6xwGVY6-70B2vpr3GsdGp5i0591fm-QC9PNvYMBd3U&_nc_zt=24&_nc_ht=scontent.fdac187-1.fna&_nc_gid=09KROb716gmWScBQ2a5mAg&oh=00_Aft67FxZ3A-QPbZomWDSg_bz29chJrcIdsjQVU_0RMjNzA&oe=698E99B2', alt: 'Personal Photo 1' },
 
 
   { src: 'https://scontent.fdac187-1.fna.fbcdn.net/v/t39.30808-6/597787973_724445007372952_6547800389915131382_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=KpmOddzwrl0Q7kNvwFTsArJ&_nc_oc=Adn-2o7A1mQLCRkKknRQ9WhnfFBd22zCdPDZzWo92i75XEQItQQ1lG505ZF5pnP54wE&_nc_zt=23&_nc_ht=scontent.fdac187-1.fna&_nc_gid=lZKkxHWIXlHIgvF4PFU8Gg&oh=00_AfvLLbRebndh5ZmhyXQeegHy2Qku5Fs5LFs7wVkm4g6XWw&oe=698E9852', alt: 'Personal Photo 2' },
@@ -58,7 +58,7 @@ const PersonalPhotos = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 personal-content">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 personal-content">
             {personalPhotos.map((photo, index) => (
               <button
                 key={index}

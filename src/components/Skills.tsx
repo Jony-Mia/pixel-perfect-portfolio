@@ -104,7 +104,7 @@ const Skills = () => {
   }, []);
 
   return (
-    <section id="skills" ref={sectionRef} className="py-24 bg-secondary/30">
+    <section id="skills" ref={sectionRef} className="py-8 bg-secondary/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 skills-content">
           <h2 className="section-title">
@@ -123,7 +123,7 @@ const Skills = () => {
         </div>
 
         {/* Expertise Cards */}
-        <div className="grid md:grid-cols-3 gap-8 skills-content">
+        {/* <div className="grid md:grid-cols-3 gap-8 skills-content">
           <ExpertiseCard
             title={t('skills.wordpress')}
             items={wordpressExpertise}
@@ -142,7 +142,7 @@ const Skills = () => {
             colorClass="text-neon-purple"
             borderColor="border-neon-purple/30 hover:border-neon-purple"
           />
-        </div>
+        </div> */}
       </div>
     </section>
   );

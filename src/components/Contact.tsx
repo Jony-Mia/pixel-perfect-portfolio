@@ -95,7 +95,7 @@ const Contact = () => {
                 </div>
               </div> */}
 
-              <div className="professional-card w-[100%] p-4 flex items-center gap-4">
+              <div className="professional-card w-[130%] p-4 flex items-center gap-4">
                 <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center flex-shrink-0">
                   <Globe className="text-primary-foreground" size={22} />
                 </div>

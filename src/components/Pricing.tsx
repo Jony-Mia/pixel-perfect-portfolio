@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Check, Star } from 'lucide-react';
+import { CheckCircle, Star } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -52,7 +52,7 @@ const pricingPlans = [
   },
   {
     name: 'Enterprenuer Support',
-    price: '$199',
+    price: '$299',
     description: 'Complete solution for enterprises and complex projects',
     features: [
 
@@ -66,10 +66,9 @@ const pricingPlans = [
       'Website Migration',
       'Web/Hosting Problem',
       'Speed Optimization',
-   
+      'Website Error',
       'CartFlows Sales Funnels',
       'Premium SEO Package',
-      'Performance Optimization',
       'Unlimited Revisions',
      
     ],
@@ -146,7 +145,7 @@ const Pricing = () => {
               <ul className="space-y-3 mb-8">
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-center gap-3 text-sm">
-                    <Check className="text-primary flex-shrink-0" size={18} />
+                    <CheckCircle className="text-primary flex-shrink-0" size={18} />
                     <span className="text-muted-foreground">{feature}</span>
                   </li>
                 ))}

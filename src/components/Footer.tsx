@@ -10,7 +10,7 @@ import {
   ArrowUp
 } from 'lucide-react';
 import logo from '@/assets/logo.png';
-
+let year = new Date().getFullYear()
 // Custom icons
 const TikTokIcon = () => (
   <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
@@ -144,9 +144,9 @@ const Footer = () => {
       {/* Bottom Bar */}
       <div className="border-t border-border">
         <div className="container mx-auto px-4 py-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-muted-foreground text-sm flex items-center gap-1">
-              © 2024 Jony. Made with <Heart size={14} className="text-red-500 fill-red-500" /> All rights reserved.
+          <div className="flex flex-col md:flex-row items-center justify-around gap-4">
+            <p className="text-muted-foreground text-center text-sm flex items-center gap-1">
+              © {year} Developed by <span className='text-blue-500'>Jony</span> .<Heart size={14} className="text-red-500 fill-red-500" /> All rights reserved.
             </p>
             
             <button

@@ -10,6 +10,18 @@ const certificates = [
     title: 'Complete Web Development',
     issuer: 'Programming Hero',
     image: certificate1,
+    year: '2026',
+  },
+  {
+    title: 'Complete WordPress Development',
+    issuer: 'W3 Topper Freelancing Academy',
+    image: 'https://scontent.fdac187-1.fna.fbcdn.net/v/t39.30808-6/550681845_652520447898742_2463063944442090996_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_ohc=3qpou9H6uXAQ7kNvwHXL5pX&_nc_oc=AdmkmK6UTryNK4nGLHv04r3hP9DU2b_K7_wXFKrIWVot-G6rh5v-EIa1NDh3IB3IbIU&_nc_zt=23&_nc_ht=scontent.fdac187-1.fna&_nc_gid=8VCpqJrzEMVCRGe6yEJ_nw&oh=00_Afvaberu-sLwdXVwHNZCg17QzQYJCVgSxoxI0J7eUZpB-g&oe=698EA7CC',
+    year: '2024',
+  },
+  {
+    title: 'Complete HSC',
+    issuer: 'Baburhut Greenfield College',
+    image: 'https://scontent.fdac187-1.fna.fbcdn.net/v/t39.30808-6/549702308_652524194565034_7131461599180223896_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_ohc=5lpA2Z5TwlMQ7kNvwEieJFF&_nc_oc=AdlqkiL7C2ZxgFODTDhMnMG7AqqaEXBBt5LkcYNBqyqiVzjZypWfp73jQIzzuXjPiFQ&_nc_zt=23&_nc_ht=scontent.fdac187-1.fna&_nc_gid=M4y8zoef6o6ldrnQ0NBkwg&oh=00_Aftz7YigctZ6sU4I7ejCQ3kWDYVOJUCSYB_LzJsU2ta2qQ&oe=698EACE9',
     year: '2024',
   },
   // Add more certificates here
@@ -50,7 +62,7 @@ const Certifications = () => {
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-12 cert-content">
+        <div className="flex flex-wrap items-center justify-center gap-12 cert-content">
           {certificates.map((cert, index) => (
             <div key={index} className="relative group">
               {/* Glowing Neon Border Animation */}

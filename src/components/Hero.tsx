@@ -27,7 +27,8 @@ const socialLinks = [
   {
     icon: 'https://cdn-icons-png.flaticon.com/128/15047/15047435.png',
     href: 'https://www.facebook.com/asm.jony.2024',
-    label: 'Facebook', colorClass: 'social-facebook'
+    label: 'Facebook',
+    //colorClass: 'social-facebook'
   },
   {
     icon: 'https://cdn-icons-png.flaticon.com/128/174/174855.png',
@@ -154,7 +155,7 @@ const Hero = () => {
                   className={`w-11 h-11 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 ${colorClass}`}
                 >
                   {/* {Icon ? <Icon size={20} /> : CustomIcon && <CustomIcon />} */}
-                  <img src={`${Icon}`} alt="" />
+                  <img src={`${Icon}`} width={35} alt="" />
                 </a>
               ))}
             </div>

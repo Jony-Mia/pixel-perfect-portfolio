@@ -107,12 +107,12 @@ const Footer = () => {
               and modern web technologies. Let's build something amazing together.
             </p>
             <div className="flex flex-wrap gap-2">
-              {socialLinks.map(({ icon: Icon, CustomIcon, href, label, colorClass }) => (
+              {socialLinks.map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}
                   href={href}
                   aria-label={label}
-                  className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 ${colorClass}`}
+                  className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110`}
                 >
                   {/* {Icon ? <Icon size={18} /> : CustomIcon && <CustomIcon />} */}
                   <img src={`${Icon}`} width={28} alt="" />

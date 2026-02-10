@@ -101,7 +101,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div>
-            <img src={logo} alt="Jony" className="h-14 mb-4" />
+            <img src={logo} alt="Jony" className="h-24 mb-4" />
             <p className="text-muted-foreground mb-6">
               Professional Web Developer specializing in WordPress, React, 
               and modern web technologies. Let's build something amazing together.

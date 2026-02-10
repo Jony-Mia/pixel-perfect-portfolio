@@ -11,10 +11,10 @@ const About = () => {
   const { t } = useLanguage();
 
   const stats = [
-    { icon: Briefcase, value: '2+', label: t('hero.yearsExp') },
-    { icon: Award, value: '95+', label: t('hero.projects') },
-    { icon: Users, value: '50+', label: t('hero.clients') },
-    { icon: Code, value: '10+', label: t('about.technologies') },
+    { icon: 'https://cdn-icons-png.flaticon.com/128/5517/5517030.png', value: '2+', label: t('hero.yearsExp') },
+    { icon: 'https://cdn-icons-png.flaticon.com/128/3113/3113025.png', value: '95+', label: t('hero.projects') },
+    { icon: 'https://cdn-icons-png.flaticon.com/128/1256/1256650.png', value: '50+', label: t('hero.clients') },
+    { icon: 'https://cdn-icons-png.flaticon.com/128/15189/15189269.png', value: '10+', label: t('about.technologies') },
   ];
 
   useEffect(() => {
@@ -72,8 +72,9 @@ const About = () => {
                 key={label}
                 className="glass-card p-6 text-center card-hover"
               >
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-primary flex items-center justify-center">
-                  <Icon className="text-primary-foreground" size={28} />
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full  flex items-center justify-center">
+                  {/* <Icon  size={28} /> */}
+                  <img className="text-primary-foreground" src={`${Icon}`} alt="" />
                 </div>
                 <p className="text-3xl font-bold text-gradient mb-2">{value}</p>
                 <p className="text-muted-foreground text-sm">{label}</p>

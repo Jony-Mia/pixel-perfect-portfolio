@@ -201,9 +201,13 @@ const Portfolio = () => {
   }, [activeCategory]);
 
   return (
-    <section id="portfolio" ref={sectionRef} className="py-24">
-      <div className="container mx-auto px-4">
+    <section id="portfolio" ref={sectionRef} className="py-24 relative overflow-hidden">
+      <div className="absolute inset-0 bg-mesh opacity-40 pointer-events-none" />
+      <div className="container mx-auto px-4 relative">
         <div className="text-center mb-16 portfolio-content">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-4 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs font-semibold uppercase tracking-wider">
+            ✦ Selected Work
+          </div>
           <h2 className="section-title">
             My <span className="text-gradient">Portfolio</span>
           </h2>
@@ -213,17 +217,16 @@ const Portfolio = () => {
         </div>
 
         {/* Category Filters */}
-        <div className="flex justify-center gap-4 mb-12 portfolio-content">
+        <div className="flex justify-center gap-3 mb-12 portfolio-content flex-wrap">
           {(['all', 'websites', 'landing-pages'] as Category[]).map((category) => (
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+              className={`px-6 py-2.5 rounded-full font-medium text-sm transition-all duration-300 border ${
                 activeCategory === category
-                  ? 'bg-gradient-primary text-primary-foreground shadow-lg'
-                  : 'bg-secondary text-muted-foreground hover:bg-secondary/80'
+                  ? 'bg-gradient-primary text-primary-foreground border-transparent shadow-[0_0_25px_hsl(var(--primary)/0.5)] scale-105'
+                  : 'bg-card/40 backdrop-blur text-muted-foreground border-border hover:border-primary/50 hover:text-primary'
               }`}
-              style={activeCategory === category ? { boxShadow: 'var(--shadow-glow)' } : {}}
             >
               {category === 'all' ? 'All Projects' : category === 'websites' ? 'Websites' : 'Landing Pages'}
             </button>
@@ -238,27 +241,30 @@ const Portfolio = () => {
               href={project.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="project-card professional-card overflow-hidden group"
+              className="project-card professional-card overflow-hidden group relative hover:-translate-y-2 hover:shadow-[0_20px_50px_-12px_hsl(var(--primary)/0.45)] hover:border-primary/60"
             >
               {/* Project Image */}
-              <div className="aspect-video overflow-hidden">
+              <div className="aspect-video overflow-hidden relative">
                 <img
                   src={project.image}
                   alt={project.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute top-3 right-3 w-10 h-10 rounded-full bg-primary/90 backdrop-blur flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500 shadow-lg">
+                  <ExternalLink size={16} className="text-primary-foreground" />
+                </div>
               </div>
 
               <div className="p-5">
                 <div className="flex items-center justify-between mb-3">
-                  <span className={`text-xs font-medium px-3 py-1 rounded-full ${
-                    project.category === 'websites' 
-                      ? 'bg-primary/20 text-primary' 
-                      : 'bg-accent/20 text-accent'
+                  <span className={`text-xs font-medium px-3 py-1 rounded-full border ${
+                    project.category === 'websites'
+                      ? 'bg-primary/10 text-primary border-primary/30'
+                      : 'bg-accent/10 text-accent border-accent/30'
                   }`}>
                     {project.category === 'websites' ? 'Website' : 'Landing Page'}
                   </span>
-                  <ExternalLink size={18} className="text-muted-foreground group-hover:text-primary transition-colors" />
                 </div>
                 <h3 className="font-bold text-lg group-hover:text-primary transition-colors">
                   {project.name}

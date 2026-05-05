@@ -147,15 +147,16 @@ const Hero = () => {
 
             {/* Social Links */}
             <div className="flex ms-3 flex-wrap gap-3">
-              {socialLinks.map(({ icon: Icon, href, label, colorClass }) => (
+              {socialLinks.map(({ icon, href, label }) => (
                 <a
                   key={label}
                   href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={label}
-                  className={`w-11 h-11 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 ${colorClass}`}
+                  className="w-12 h-12 rounded-2xl flex items-center justify-center bg-card/60 backdrop-blur border border-border transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:shadow-[0_0_25px_hsl(var(--primary)/0.5)] hover:border-primary/60"
                 >
-                  {/* {Icon ? <Icon size={20} /> : CustomIcon && <CustomIcon />} */}
-                  <img src={`${Icon}`} width={35} alt="" />
+                  <img src={icon} width={28} height={28} alt={label} />
                 </a>
               ))}
             </div>

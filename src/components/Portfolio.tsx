@@ -20,7 +20,7 @@ import sakura from "@/assets/Screenshot_6.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
-type Category = 'all' | 'Ecommerce' | 'landing-pages';
+type Category = 'all' | 'websites' | 'landing-pages';
 
 interface Project {
   name: string;

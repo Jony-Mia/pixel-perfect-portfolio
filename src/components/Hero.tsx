@@ -109,9 +109,12 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <div ref={textRef} className="order-2 lg:order-1">
-            <p className="text-primary font-semibold mb-4 tracking-wider uppercase">
-              {t('hero.welcome')}
-            </p>
+            <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full border border-primary/30 bg-primary/10 backdrop-blur-sm">
+              <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+              <p className="text-primary font-semibold text-sm tracking-wider uppercase">
+                {t('hero.welcome')}
+              </p>
+            </div>
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
               {t('hero.greeting')} <span className="text-gradient">{t('hero.name')}</span>
             </h1>

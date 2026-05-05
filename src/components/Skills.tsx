@@ -19,6 +19,10 @@ const skills = [
   { name: 'Elementor', percentage: 96 },
   { name: 'WooCommerce', percentage: 92 },
   { name: 'CartFlows', percentage: 88 },
+  { name: 'MongoDB', percentage: 80 },
+  { name: 'Express.js', percentage: 82 },
+  { name: 'Node.js', percentage: 84 },
+  { name: 'React (MERN)', percentage: 88 },
 ];
 
 const ExpertiseCard = ({ title, items, colorClass, borderColor }: { title: string; items: string[]; colorClass: string; borderColor: string }) => (

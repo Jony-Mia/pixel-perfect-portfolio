@@ -171,7 +171,8 @@ const Hero = () => {
           {/* Profile Image */}
           <div ref={imageRef} className="order-1 lg:order-2 flex justify-center">
             <div className="relative">
-              <div className="w-80 h-80 md:w-96 md:h-96 rounded-full bg-gradient-primary p-1 animate-glow-pulse">
+              <div className="absolute -inset-6 rounded-full bg-gradient-glow opacity-40 blur-2xl animate-pulse-glow" />
+              <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-full bg-gradient-primary p-[3px] animate-glow-pulse">
                 <div className="w-full h-full rounded-full bg-background p-2">
                   <img
                     src={profileImage}
@@ -180,9 +181,13 @@ const Hero = () => {
                   />
                 </div>
               </div>
-              {/* Floating Elements */}
-              <div className="absolute -top-4 -right-4 w-20 h-20 bg-primary/20 rounded-full blur-xl animate-float" />
-              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-accent/20 rounded-full blur-xl animate-float" style={{ animationDelay: '1s' }} />
+              {/* Floating decorative chips */}
+              <div className="absolute -top-3 -right-3 px-3 py-1.5 rounded-xl bg-card/90 backdrop-blur border border-primary/40 shadow-[0_0_20px_hsl(var(--primary)/0.4)] text-xs font-semibold text-primary animate-float">
+                ⚡ Available
+              </div>
+              <div className="absolute -bottom-3 -left-3 px-3 py-1.5 rounded-xl bg-card/90 backdrop-blur border border-accent/40 shadow-[0_0_20px_hsl(var(--accent)/0.4)] text-xs font-semibold text-accent animate-float" style={{ animationDelay: '1s' }}>
+                🚀 95+ Projects
+              </div>
             </div>
           </div>
         </div>

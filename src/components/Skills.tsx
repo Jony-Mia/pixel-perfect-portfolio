@@ -104,9 +104,14 @@ const Skills = () => {
   }, []);
 
   return (
-    <section id="skills" ref={sectionRef} className="py-8 bg-secondary/30">
-      <div className="container mx-auto px-4">
+    <section id="skills" ref={sectionRef} className="py-20 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-secondary/20 via-background to-secondary/20" />
+      <div className="absolute inset-0 bg-grid opacity-30" />
+      <div className="container mx-auto px-4 relative">
         <div className="text-center mb-16 skills-content">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-4 rounded-full border border-accent/30 bg-accent/10 text-accent text-xs font-semibold uppercase tracking-wider">
+            ⚙ Tech Stack
+          </div>
           <h2 className="section-title">
             {t('skills.title')} <span className="text-gradient">{t('skills.titleHighlight')}</span>
           </h2>

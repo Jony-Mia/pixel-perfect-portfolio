@@ -99,16 +99,22 @@ const Hero = () => {
     >
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-hero" />
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
+      <div className="absolute inset-0 bg-mesh opacity-80" />
+      <div className="absolute inset-0 bg-grid opacity-60" />
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-float" />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
+      <div className="absolute top-1/2 right-1/3 w-72 h-72 bg-neon-purple/15 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }} />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <div ref={textRef} className="order-2 lg:order-1">
-            <p className="text-primary font-semibold mb-4 tracking-wider uppercase">
-              {t('hero.welcome')}
-            </p>
+            <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full border border-primary/30 bg-primary/10 backdrop-blur-sm">
+              <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+              <p className="text-primary font-semibold text-sm tracking-wider uppercase">
+                {t('hero.welcome')}
+              </p>
+            </div>
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
               {t('hero.greeting')} <span className="text-gradient">{t('hero.name')}</span>
             </h1>
@@ -147,15 +153,16 @@ const Hero = () => {
 
             {/* Social Links */}
             <div className="flex ms-3 flex-wrap gap-3">
-              {socialLinks.map(({ icon: Icon, href, label, colorClass }) => (
+              {socialLinks.map(({ icon, href, label }) => (
                 <a
                   key={label}
                   href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={label}
-                  className={`w-11 h-11 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 ${colorClass}`}
+                  className="w-12 h-12 rounded-2xl flex items-center justify-center bg-card/60 backdrop-blur border border-border transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:shadow-[0_0_25px_hsl(var(--primary)/0.5)] hover:border-primary/60"
                 >
-                  {/* {Icon ? <Icon size={20} /> : CustomIcon && <CustomIcon />} */}
-                  <img src={`${Icon}`} width={35} alt="" />
+                  <img src={icon} width={28} height={28} alt={label} />
                 </a>
               ))}
             </div>
@@ -164,7 +171,8 @@ const Hero = () => {
           {/* Profile Image */}
           <div ref={imageRef} className="order-1 lg:order-2 flex justify-center">
             <div className="relative">
-              <div className="w-80 h-80 md:w-96 md:h-96 rounded-full bg-gradient-primary p-1 animate-glow-pulse">
+              <div className="absolute -inset-6 rounded-full bg-gradient-glow opacity-40 blur-2xl animate-pulse-glow" />
+              <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-full bg-gradient-primary p-[3px] animate-glow-pulse">
                 <div className="w-full h-full rounded-full bg-background p-2">
                   <img
                     src={profileImage}
@@ -173,9 +181,13 @@ const Hero = () => {
                   />
                 </div>
               </div>
-              {/* Floating Elements */}
-              <div className="absolute -top-4 -right-4 w-20 h-20 bg-primary/20 rounded-full blur-xl animate-float" />
-              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-accent/20 rounded-full blur-xl animate-float" style={{ animationDelay: '1s' }} />
+              {/* Floating decorative chips */}
+              <div className="absolute -top-3 -right-3 px-3 py-1.5 rounded-xl bg-card/90 backdrop-blur border border-primary/40 shadow-[0_0_20px_hsl(var(--primary)/0.4)] text-xs font-semibold text-primary animate-float">
+                ⚡ Available
+              </div>
+              <div className="absolute -bottom-3 -left-3 px-3 py-1.5 rounded-xl bg-card/90 backdrop-blur border border-accent/40 shadow-[0_0_20px_hsl(var(--accent)/0.4)] text-xs font-semibold text-accent animate-float" style={{ animationDelay: '1s' }}>
+                🚀 95+ Projects
+              </div>
             </div>
           </div>
         </div>

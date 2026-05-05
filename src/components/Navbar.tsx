@@ -37,29 +37,35 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? 'bg-background/90 backdrop-blur-xl border-b border-border/50' : 'bg-transparent'
+        scrolled
+          ? 'bg-background/70 backdrop-blur-2xl border-b border-primary/20 shadow-[0_4px_30px_hsl(var(--primary)/0.1)]'
+          : 'bg-transparent'
       }`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          <a href="#home" className="flex items-center gap-2">
-            <img src={logo} alt="Jony Logo" className="h-12 w-auto" />
+          <a href="#home" className="flex items-center gap-2 group relative">
+            <div className="absolute -inset-2 rounded-full bg-gradient-glow opacity-0 group-hover:opacity-50 blur-xl transition-opacity duration-500" />
+            <img src={logo} alt="Jony Logo" className="h-12 w-auto relative transition-transform duration-300 group-hover:scale-105" />
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-1 px-2 py-1.5 rounded-full bg-card/40 backdrop-blur border border-border/60">
             {navLinks.map((link) => (
               <button
                 key={link.href}
                 onClick={() => scrollToSection(link.href)}
-                className="text-muted-foreground hover:text-primary transition-colors duration-300 font-medium"
+                className="relative px-4 py-2 text-sm text-muted-foreground hover:text-primary transition-colors duration-300 font-medium rounded-full hover:bg-primary/10"
               >
                 {link.name}
               </button>
             ))}
+          </div>
+
+          <div className="hidden lg:flex">
             <button
               onClick={() => scrollToSection('#portfolio')}
-              className="btn-primary text-sm"
+              className="btn-primary text-sm !py-2.5 !px-5"
             >
               {t('nav.viewPortfolio')}
             </button>
@@ -67,10 +73,10 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden text-foreground p-2"
+            className="lg:hidden text-foreground p-2 rounded-lg border border-border bg-card/40 backdrop-blur"
             onClick={() => setIsOpen(!isOpen)}
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
 

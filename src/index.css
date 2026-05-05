@@ -425,9 +425,17 @@
   to {
     opacity: 1;
   }
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
 
-.swiper-pagination-bullet {
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
   background: hsl(var(--primary)) !important;
 }
 

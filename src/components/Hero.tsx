@@ -4,15 +4,16 @@ import { ArrowRight, Download, Github, Instagram, Linkedin, Twitter } from 'luci
 import { useLanguage } from '@/contexts/LanguageContext';
 import profileImage from '@/assets/profile.png';
 
+// Position tech badges around the profile (angle in degrees, 0 = top, clockwise)
 const techOrbits = [
-  { name: 'HTML', icon: 'https://cdn-icons-png.flaticon.com/128/732/732212.png', className: 'top-0 left-1/2 -translate-x-1/2 -translate-y-2', delay: '0s' },
-  { name: 'CSS', icon: 'https://cdn-icons-png.flaticon.com/128/732/732190.png', className: 'top-10 right-2 md:right-0', delay: '0.5s' },
-  { name: 'JS', icon: 'https://cdn-icons-png.flaticon.com/128/5968/5968292.png', className: 'top-1/2 -right-2 md:-right-4 -translate-y-1/2', delay: '1s' },
-  { name: 'React', icon: 'https://cdn-icons-png.flaticon.com/128/1126/1126012.png', className: 'bottom-10 right-2 md:right-2', delay: '1.5s' },
-  { name: 'Tailwind', icon: 'https://cdn-icons-png.flaticon.com/128/15484/15484303.png', className: 'bottom-0 left-1/2 -translate-x-1/2 translate-y-2', delay: '2s' },
-  { name: 'Node', icon: 'https://cdn-icons-png.flaticon.com/128/5968/5968322.png', className: 'bottom-10 left-2 md:left-2', delay: '2.5s' },
-  { name: 'TypeScript', icon: 'https://cdn-icons-png.flaticon.com/128/5968/5968381.png', className: 'top-1/2 -left-2 md:-left-4 -translate-y-1/2', delay: '3s' },
-  { name: 'Next', icon: 'https://cdn-icons-png.flaticon.com/128/15466/15466163.png', className: 'top-10 left-2 md:left-0', delay: '3.5s' },
+  { name: 'HTML', icon: 'https://cdn-icons-png.flaticon.com/128/732/732212.png', angle: 0, color: 'hsl(14, 85%, 55%)' },
+  { name: 'CSS', icon: 'https://cdn-icons-png.flaticon.com/128/732/732190.png', angle: 45, color: 'hsl(220, 75%, 55%)' },
+  { name: 'JavaScript', icon: 'https://cdn-icons-png.flaticon.com/128/5968/5968292.png', angle: 90, color: 'hsl(50, 95%, 55%)' },
+  { name: 'Next.js', icon: 'https://cdn-icons-png.flaticon.com/128/15466/15466163.png', angle: 135, color: 'hsl(0, 0%, 90%)' },
+  { name: 'React.js', icon: 'https://cdn-icons-png.flaticon.com/128/1126/1126012.png', angle: 180, color: 'hsl(195, 90%, 60%)' },
+  { name: 'Tailwind', icon: 'https://cdn-icons-png.flaticon.com/128/15484/15484303.png', angle: 225, color: 'hsl(195, 90%, 55%)' },
+  { name: 'Node.js', icon: 'https://cdn-icons-png.flaticon.com/128/5968/5968322.png', angle: 270, color: 'hsl(95, 60%, 50%)' },
+  { name: 'TypeScript', icon: 'https://cdn-icons-png.flaticon.com/128/5968/5968381.png', angle: 315, color: 'hsl(215, 60%, 55%)' },
 ];
 
 const socialLinks = [
@@ -134,17 +135,39 @@ const Hero = () => {
                 </div>
               </div>
 
-              {/* Orbiting tech badges */}
-              {techOrbits.map(({ name, icon, className, delay }) => (
-                <div
-                  key={name}
-                  className={`absolute ${className} w-14 h-14 md:w-16 md:h-16 rounded-full bg-card/90 backdrop-blur border border-primary/40 shadow-[0_0_20px_hsl(var(--primary)/0.4)] flex items-center justify-center animate-float`}
-                  style={{ animationDelay: delay }}
-                  title={name}
-                >
-                  <img src={icon} alt={name} className="w-7 h-7 md:w-9 md:h-9 object-contain" />
-                </div>
-              ))}
+              {/* Orbiting tech badges around profile */}
+              {techOrbits.map(({ name, icon, angle, color }, i) => {
+                const rad = (angle - 90) * (Math.PI / 180);
+                const r = 50; // percent radius
+                const x = 50 + r * Math.cos(rad);
+                const y = 50 + r * Math.sin(rad);
+                return (
+                  <div
+                    key={name}
+                    className="absolute -translate-x-1/2 -translate-y-1/2 animate-float"
+                    style={{ left: `${x}%`, top: `${y}%`, animationDelay: `${i * 0.4}s` }}
+                  >
+                    <div className="flex flex-col items-center gap-1.5">
+                      <div
+                        className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-card/90 backdrop-blur flex items-center justify-center border-2 transition-transform duration-300 hover:scale-110"
+                        style={{
+                          borderColor: color,
+                          boxShadow: `0 0 20px ${color}80, inset 0 0 12px ${color}30`,
+                        }}
+                        title={name}
+                      >
+                        <img src={icon} alt={name} className="w-6 h-6 md:w-8 md:h-8 object-contain" />
+                      </div>
+                      <span
+                        className="px-2 py-0.5 text-[10px] md:text-xs font-semibold rounded-md bg-card/90 backdrop-blur border whitespace-nowrap"
+                        style={{ borderColor: `${color}60`, color }}
+                      >
+                        {name}
+                      </span>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

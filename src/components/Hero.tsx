@@ -135,17 +135,39 @@ const Hero = () => {
                 </div>
               </div>
 
-              {/* Orbiting tech badges */}
-              {techOrbits.map(({ name, icon, className, delay }) => (
-                <div
-                  key={name}
-                  className={`absolute ${className} w-14 h-14 md:w-16 md:h-16 rounded-full bg-card/90 backdrop-blur border border-primary/40 shadow-[0_0_20px_hsl(var(--primary)/0.4)] flex items-center justify-center animate-float`}
-                  style={{ animationDelay: delay }}
-                  title={name}
-                >
-                  <img src={icon} alt={name} className="w-7 h-7 md:w-9 md:h-9 object-contain" />
-                </div>
-              ))}
+              {/* Orbiting tech badges around profile */}
+              {techOrbits.map(({ name, icon, angle, color }, i) => {
+                const rad = (angle - 90) * (Math.PI / 180);
+                const r = 50; // percent radius
+                const x = 50 + r * Math.cos(rad);
+                const y = 50 + r * Math.sin(rad);
+                return (
+                  <div
+                    key={name}
+                    className="absolute -translate-x-1/2 -translate-y-1/2 animate-float"
+                    style={{ left: `${x}%`, top: `${y}%`, animationDelay: `${i * 0.4}s` }}
+                  >
+                    <div className="flex flex-col items-center gap-1.5">
+                      <div
+                        className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-card/90 backdrop-blur flex items-center justify-center border-2 transition-transform duration-300 hover:scale-110"
+                        style={{
+                          borderColor: color,
+                          boxShadow: `0 0 20px ${color}80, inset 0 0 12px ${color}30`,
+                        }}
+                        title={name}
+                      >
+                        <img src={icon} alt={name} className="w-6 h-6 md:w-8 md:h-8 object-contain" />
+                      </div>
+                      <span
+                        className="px-2 py-0.5 text-[10px] md:text-xs font-semibold rounded-md bg-card/90 backdrop-blur border whitespace-nowrap"
+                        style={{ borderColor: `${color}60`, color }}
+                      >
+                        {name}
+                      </span>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

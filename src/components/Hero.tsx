@@ -1,61 +1,25 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import { Facebook, Instagram, Linkedin, Youtube } from 'lucide-react';
+import { ArrowRight, Download, Github, Instagram, Linkedin, Twitter } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import profileImage from '@/assets/profile.png';
 
-// Custom icons for missing social platforms
-const TikTokIcon = () => (
-  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
-  </svg>
-);
-
-const ThreadsIcon = () => (
-  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-    <path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.96-.065-1.182.408-2.256 1.332-3.023.88-.73 2.132-1.13 3.628-1.154 1.135-.018 2.18.127 3.126.385-.07-.846-.296-1.508-.68-1.978-.455-.558-1.17-.838-2.121-.838h-.05c-.754.006-1.374.238-1.844.69l-1.404-1.5c.82-.77 1.9-1.18 3.212-1.22h.073c1.565 0 2.798.503 3.663 1.496.793.912 1.217 2.201 1.26 3.834.494.194.95.426 1.363.695 1.27.829 2.185 1.986 2.644 3.346.611 1.807.565 4.303-1.594 6.415-1.834 1.793-4.15 2.648-7.432 2.675zM12.24 14.49c-1.297.023-2.236.345-2.717.93-.373.456-.462 1.058-.253 1.565.237.572.801.939 1.589.939.06 0 .12-.002.18-.006 1.278-.07 2.065-.564 2.475-1.552.216-.52.335-1.155.357-1.902-.503-.147-1.05-.25-1.631-.25z" />
-  </svg>
-);
-
-const XIcon = () => (
-  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-  </svg>
-);
+const techOrbits = [
+  { name: 'HTML', icon: 'https://cdn-icons-png.flaticon.com/128/732/732212.png', className: 'top-0 left-1/2 -translate-x-1/2 -translate-y-2', delay: '0s' },
+  { name: 'CSS', icon: 'https://cdn-icons-png.flaticon.com/128/732/732190.png', className: 'top-10 right-2 md:right-0', delay: '0.5s' },
+  { name: 'JS', icon: 'https://cdn-icons-png.flaticon.com/128/5968/5968292.png', className: 'top-1/2 -right-2 md:-right-4 -translate-y-1/2', delay: '1s' },
+  { name: 'React', icon: 'https://cdn-icons-png.flaticon.com/128/1126/1126012.png', className: 'bottom-10 right-2 md:right-2', delay: '1.5s' },
+  { name: 'Tailwind', icon: 'https://cdn-icons-png.flaticon.com/128/15484/15484303.png', className: 'bottom-0 left-1/2 -translate-x-1/2 translate-y-2', delay: '2s' },
+  { name: 'Node', icon: 'https://cdn-icons-png.flaticon.com/128/5968/5968322.png', className: 'bottom-10 left-2 md:left-2', delay: '2.5s' },
+  { name: 'TypeScript', icon: 'https://cdn-icons-png.flaticon.com/128/5968/5968381.png', className: 'top-1/2 -left-2 md:-left-4 -translate-y-1/2', delay: '3s' },
+  { name: 'Next', icon: 'https://cdn-icons-png.flaticon.com/128/15466/15466163.png', className: 'top-10 left-2 md:left-0', delay: '3.5s' },
+];
 
 const socialLinks = [
-  {
-    icon: 'https://cdn-icons-png.flaticon.com/128/15047/15047435.png',
-    href: 'https://www.facebook.com/asm.jony.2024',
-    label: 'Facebook',
-    //colorClass: 'social-facebook'
-  },
-  {
-    icon: 'https://cdn-icons-png.flaticon.com/128/174/174855.png',
-    href: 'https://www.instagram.com/jonymia321/',
-    label: 'Instagram',
-   // colorClass: 'social-instagram'
-  },
-  {
-    icon: 'https://cdn-icons-png.flaticon.com/128/3991/3991775.png',
-    href: 'https://www.linkedin.com/in/jony-mia-243ab4334/',
-    label: 'LinkedIn',
-    //colorClass: 'social-linkedin'
-  },
-  {
-    icon: 'https://cdn-icons-png.flaticon.com/128/5969/5969020.png',
-    href: 'https://x.com/JonyMia220812',
-    label: 'X (Twitter)',
-  //  colorClass: 'social-twitter'
-  },
-  {
-    icon: 'https://cdn-icons-png.flaticon.com/128/1384/1384060.png',
-    href: 'https://www.youtube.com/@jonymia1972',
-    label: 'YouTube',
-  //  colorClass: 'social-youtube'
-  },
-  // { CustomIcon: TikTokIcon, href: '#', label: 'TikTok', colorClass: 'social-tiktok' },
-  // { CustomIcon: ThreadsIcon, href: '#', label: 'Threads', colorClass: 'social-threads' },
+  { Icon: Github, href: 'https://github.com', label: 'GitHub' },
+  { Icon: Linkedin, href: 'https://www.linkedin.com/in/jony-mia-243ab4334/', label: 'LinkedIn' },
+  { Icon: Twitter, href: 'https://x.com/JonyMia220812', label: 'Twitter' },
+  { Icon: Instagram, href: 'https://www.instagram.com/jonymia321/', label: 'Instagram' },
 ];
 
 const Hero = () => {
@@ -66,128 +30,121 @@ const Hero = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.fromTo(
-        textRef.current,
-        { opacity: 0, x: -100 },
-        { opacity: 1, x: 0, duration: 1, ease: 'power3.out' }
-      );
-      gsap.fromTo(
-        imageRef.current,
-        { opacity: 0, scale: 0.8 },
-        { opacity: 1, scale: 1, duration: 1, delay: 0.3, ease: 'power3.out' }
-      );
+      gsap.fromTo(textRef.current, { opacity: 0, x: -80 }, { opacity: 1, x: 0, duration: 1, ease: 'power3.out' });
+      gsap.fromTo(imageRef.current, { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 1, delay: 0.3, ease: 'power3.out' });
     }, heroRef);
-
     return () => ctx.revert();
   }, []);
 
-  const scrollToPortfolio = () => {
-    const element = document.querySelector('#portfolio');
-    if (element) element.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const scrollToContact = () => {
-    const element = document.querySelector('#contact');
-    if (element) element.scrollIntoView({ behavior: 'smooth' });
+  const scrollTo = (sel: string) => {
+    const el = document.querySelector(sel);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
     <section
       id="home"
       ref={heroRef}
-      className="min-h-screen flex items-center py-20  relative overflow-hidden"
+      className="min-h-screen flex items-center py-24 relative overflow-hidden"
     >
-      {/* Background Effects */}
+      {/* Background */}
       <div className="absolute inset-0 bg-gradient-hero" />
       <div className="absolute inset-0 bg-mesh opacity-80" />
-      <div className="absolute inset-0 bg-grid opacity-60" />
+      <div className="absolute inset-0 bg-grid opacity-40" />
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-float" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
-      <div className="absolute top-1/2 right-1/3 w-72 h-72 bg-neon-purple/15 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }} />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-neon-purple/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Text Content */}
+          {/* Text */}
           <div ref={textRef} className="order-2 lg:order-1">
-            <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full border border-primary/30 bg-primary/10 backdrop-blur-sm">
-              <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-              <p className="text-primary font-semibold text-sm tracking-wider uppercase">
-                {t('hero.welcome')}
-              </p>
-            </div>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              {t('hero.greeting')} <span className="text-gradient">{t('hero.name')}</span>
+            <p className="text-2xl md:text-3xl text-neon-purple font-medium mb-3">
+              {t('hero.greeting')}
+            </p>
+            <h1 className="text-5xl md:text-7xl font-bold mb-4 leading-tight">
+              <span className="text-foreground">{t('hero.name').split(' ')[0]} </span>
+              <span className="text-gradient">{t('hero.name').split(' ').slice(1).join(' ') || ''}</span>
             </h1>
-            <h2 className="text-2xl md:text-3xl text-muted-foreground mb-6">
+            <h2 className="text-2xl md:text-3xl text-foreground/90 font-semibold mb-5">
               {t('hero.title')}
             </h2>
-            <p className="text-muted-foreground text-lg mb-8 max-w-xl">
+
+            {/* Role chips */}
+            <div className="inline-flex flex-wrap items-center gap-3 px-5 py-2.5 mb-6 rounded-full border border-primary/30 bg-card/40 backdrop-blur-md text-sm">
+              <span className="text-foreground/90">React.js Developer</span>
+              <span className="text-primary">|</span>
+              <span className="text-foreground/90">Next.js Expert</span>
+              <span className="text-primary">|</span>
+              <span className="text-foreground/90">UI/UX Enthusiast</span>
+            </div>
+
+            <p className="text-muted-foreground text-base md:text-lg mb-8 max-w-xl leading-relaxed">
               {t('hero.description')}
             </p>
 
-            {/* Stats */}
-            <div className="flex gap-8 mb-8">
-              <div className="text-center">
-                <p className="text-4xl font-bold text-gradient">2+</p>
-                <p className="text-muted-foreground text-sm">{t('hero.yearsExp')}</p>
-              </div>
-              <div className="text-center">
-                <p className="text-4xl font-bold text-gradient">99+</p>
-                <p className="text-muted-foreground text-sm">{t('hero.projects')}</p>
-              </div>
-              {/* <div className="text-center">
-                <p className="text-4xl font-bold text-gradient">85+</p>
-                <p className="text-muted-foreground text-sm">{t('hero.clients')}</p>
-              </div> */}
-            </div>
-
             {/* Buttons */}
-            <div className="flex flex-wrap gap-4 mb-8">
-              <button onClick={scrollToPortfolio} className="btn-primary">
-                {t('hero.viewPortfolio')}
-              </button>
-              <button onClick={scrollToContact} className="btn-outline">
-                {t('hero.letsTalk')}
+            <div className="flex flex-wrap gap-4 mb-10">
+              <a
+                href="#contact"
+                onClick={(e) => { e.preventDefault(); scrollTo('#contact'); }}
+                className="btn-primary inline-flex items-center gap-2"
+              >
+                Download CV <Download size={18} />
+              </a>
+              <button
+                onClick={() => scrollTo('#contact')}
+                className="btn-outline inline-flex items-center gap-2"
+              >
+                {t('hero.letsTalk')} <ArrowRight size={18} />
               </button>
             </div>
 
-            {/* Social Links */}
-            <div className="flex ms-3 flex-wrap gap-3">
-              {socialLinks.map(({ icon, href, label }) => (
+            {/* Social Icons - circular outlined */}
+            <div className="flex flex-wrap gap-4">
+              {socialLinks.map(({ Icon, href, label }) => (
                 <a
                   key={label}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="w-12 h-12 rounded-2xl flex items-center justify-center bg-card/60 backdrop-blur border border-border transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:shadow-[0_0_25px_hsl(var(--primary)/0.5)] hover:border-primary/60"
+                  className="w-12 h-12 rounded-full flex items-center justify-center border border-border/70 bg-card/30 backdrop-blur text-muted-foreground hover:text-primary hover:border-primary/70 hover:shadow-[0_0_20px_hsl(var(--primary)/0.45)] transition-all duration-300 hover:-translate-y-1"
                 >
-                  <img src={icon} width={28} height={28} alt={label} />
+                  <Icon size={20} />
                 </a>
               ))}
             </div>
           </div>
 
-          {/* Profile Image */}
+          {/* Profile Image with orbiting tech */}
           <div ref={imageRef} className="order-1 lg:order-2 flex justify-center">
-            <div className="relative">
-              <div className="absolute -inset-6 rounded-full bg-gradient-glow opacity-40 blur-2xl animate-pulse-glow" />
-              <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-full bg-gradient-primary p-[3px] animate-glow-pulse">
-                <div className="w-full h-full rounded-full bg-background p-2">
-                  <img
-                    src={profileImage}
-                    alt="Jony - Web Developer"
-                    className="w-full h-full object-cover rounded-full"
-                  />
+            <div className="relative w-[340px] h-[340px] md:w-[460px] md:h-[460px]">
+              {/* Outer rotating rings */}
+              <div className="absolute inset-0 rounded-full border border-primary/30 animate-[spin_30s_linear_infinite]" />
+              <div className="absolute inset-6 rounded-full border border-neon-purple/30 animate-[spin_25s_linear_infinite_reverse]" />
+              <div className="absolute inset-12 rounded-full border border-accent/20 animate-[spin_20s_linear_infinite]" />
+
+              {/* Glow halo */}
+              <div className="absolute inset-16 rounded-full bg-gradient-glow opacity-40 blur-3xl animate-pulse-glow" />
+
+              {/* Profile */}
+              <div className="absolute inset-20 rounded-full bg-gradient-primary p-[3px] shadow-[0_0_60px_hsl(var(--primary)/0.5)]">
+                <div className="w-full h-full rounded-full bg-background p-1.5 overflow-hidden">
+                  <img src={profileImage} alt="Profile" className="w-full h-full object-cover rounded-full" />
                 </div>
               </div>
-              {/* Floating decorative chips */}
-              <div className="absolute -top-3 -right-3 px-3 py-1.5 rounded-xl bg-card/90 backdrop-blur border border-primary/40 shadow-[0_0_20px_hsl(var(--primary)/0.4)] text-xs font-semibold text-primary animate-float">
-                ⚡ Available
-              </div>
-              <div className="absolute -bottom-3 -left-3 px-3 py-1.5 rounded-xl bg-card/90 backdrop-blur border border-accent/40 shadow-[0_0_20px_hsl(var(--accent)/0.4)] text-xs font-semibold text-accent animate-float" style={{ animationDelay: '1s' }}>
-                🚀 95+ Projects
-              </div>
+
+              {/* Orbiting tech badges */}
+              {techOrbits.map(({ name, icon, className, delay }) => (
+                <div
+                  key={name}
+                  className={`absolute ${className} w-14 h-14 md:w-16 md:h-16 rounded-full bg-card/90 backdrop-blur border border-primary/40 shadow-[0_0_20px_hsl(var(--primary)/0.4)] flex items-center justify-center animate-float`}
+                  style={{ animationDelay: delay }}
+                  title={name}
+                >
+                  <img src={icon} alt={name} className="w-7 h-7 md:w-9 md:h-9 object-contain" />
+                </div>
+              ))}
             </div>
           </div>
         </div>

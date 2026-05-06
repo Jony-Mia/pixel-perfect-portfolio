@@ -4,15 +4,16 @@ import { ArrowRight, Download, Github, Instagram, Linkedin, Twitter } from 'luci
 import { useLanguage } from '@/contexts/LanguageContext';
 import profileImage from '@/assets/profile.png';
 
+// Position tech badges around the profile (angle in degrees, 0 = top, clockwise)
 const techOrbits = [
-  { name: 'HTML', icon: 'https://cdn-icons-png.flaticon.com/128/732/732212.png', className: 'top-0 left-1/2 -translate-x-1/2 -translate-y-2', delay: '0s' },
-  { name: 'CSS', icon: 'https://cdn-icons-png.flaticon.com/128/732/732190.png', className: 'top-10 right-2 md:right-0', delay: '0.5s' },
-  { name: 'JS', icon: 'https://cdn-icons-png.flaticon.com/128/5968/5968292.png', className: 'top-1/2 -right-2 md:-right-4 -translate-y-1/2', delay: '1s' },
-  { name: 'React', icon: 'https://cdn-icons-png.flaticon.com/128/1126/1126012.png', className: 'bottom-10 right-2 md:right-2', delay: '1.5s' },
-  { name: 'Tailwind', icon: 'https://cdn-icons-png.flaticon.com/128/15484/15484303.png', className: 'bottom-0 left-1/2 -translate-x-1/2 translate-y-2', delay: '2s' },
-  { name: 'Node', icon: 'https://cdn-icons-png.flaticon.com/128/5968/5968322.png', className: 'bottom-10 left-2 md:left-2', delay: '2.5s' },
-  { name: 'TypeScript', icon: 'https://cdn-icons-png.flaticon.com/128/5968/5968381.png', className: 'top-1/2 -left-2 md:-left-4 -translate-y-1/2', delay: '3s' },
-  { name: 'Next', icon: 'https://cdn-icons-png.flaticon.com/128/15466/15466163.png', className: 'top-10 left-2 md:left-0', delay: '3.5s' },
+  { name: 'HTML', icon: 'https://cdn-icons-png.flaticon.com/128/732/732212.png', angle: 0, color: 'hsl(14, 85%, 55%)' },
+  { name: 'CSS', icon: 'https://cdn-icons-png.flaticon.com/128/732/732190.png', angle: 45, color: 'hsl(220, 75%, 55%)' },
+  { name: 'JavaScript', icon: 'https://cdn-icons-png.flaticon.com/128/5968/5968292.png', angle: 90, color: 'hsl(50, 95%, 55%)' },
+  { name: 'Next.js', icon: 'https://cdn-icons-png.flaticon.com/128/15466/15466163.png', angle: 135, color: 'hsl(0, 0%, 90%)' },
+  { name: 'React.js', icon: 'https://cdn-icons-png.flaticon.com/128/1126/1126012.png', angle: 180, color: 'hsl(195, 90%, 60%)' },
+  { name: 'Tailwind', icon: 'https://cdn-icons-png.flaticon.com/128/15484/15484303.png', angle: 225, color: 'hsl(195, 90%, 55%)' },
+  { name: 'Node.js', icon: 'https://cdn-icons-png.flaticon.com/128/5968/5968322.png', angle: 270, color: 'hsl(95, 60%, 50%)' },
+  { name: 'TypeScript', icon: 'https://cdn-icons-png.flaticon.com/128/5968/5968381.png', angle: 315, color: 'hsl(215, 60%, 55%)' },
 ];
 
 const socialLinks = [

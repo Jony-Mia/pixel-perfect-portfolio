@@ -11,28 +11,28 @@ const contactItems = [
     label: 'Email Me',
     value: 'ajonymia321@gmail.com',
     href: 'mailto:ajonymia321@gmail.com',
-    accent: 'hsl(200 100% 50%)',
+    accent: 'hsl(var(--primary))',
   },
   {
     icon: Phone,
     label: 'WhatsApp',
     value: '+880 1770 522886',
     href: 'https://wa.me/+8801770522886',
-    accent: 'hsl(145 80% 45%)',
+    accent: 'hsl(var(--accent))',
   },
   {
     icon: MapPin,
     label: 'Location',
     value: 'Bangladesh',
     href: '#',
-    accent: 'hsl(280 70% 60%)',
+    accent: 'hsl(280 70% 55%)',
   },
   {
     icon: Globe,
     label: 'Response Time',
     value: 'Within 24 Hours',
     href: '#',
-    accent: 'hsl(200 100% 50%)',
+    accent: 'hsl(var(--primary))',
   },
 ];
 

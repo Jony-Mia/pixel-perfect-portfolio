@@ -1,78 +1,22 @@
-import { 
-  Facebook, 
-  Instagram, 
-  Linkedin, 
-  Youtube, 
+import {
   Mail,
   Phone,
   MapPin,
   Heart,
-  ArrowUp
+  ArrowUp,
+  Send,
+  Sparkles,
 } from 'lucide-react';
 import logo from '@/assets/logo.png';
-let year = new Date().getFullYear()
-// Custom icons
-const TikTokIcon = () => (
-  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
-  </svg>
-);
 
-const ThreadsIcon = () => (
-  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-    <path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.96-.065-1.182.408-2.256 1.332-3.023.88-.73 2.132-1.13 3.628-1.154 1.135-.018 2.18.127 3.126.385-.07-.846-.296-1.508-.68-1.978-.455-.558-1.17-.838-2.121-.838h-.05c-.754.006-1.374.238-1.844.69l-1.404-1.5c.82-.77 1.9-1.18 3.212-1.22h.073c1.565 0 2.798.503 3.663 1.496.793.912 1.217 2.201 1.26 3.834.494.194.95.426 1.363.695 1.27.829 2.185 1.986 2.644 3.346.611 1.807.565 4.303-1.594 6.415-1.834 1.793-4.15 2.648-7.432 2.675zM12.24 14.49c-1.297.023-2.236.345-2.717.93-.373.456-.462 1.058-.253 1.565.237.572.801.939 1.589.939.06 0 .12-.002.18-.006 1.278-.07 2.065-.564 2.475-1.552.216-.52.335-1.155.357-1.902-.503-.147-1.05-.25-1.631-.25z"/>
-  </svg>
-);
+const year = new Date().getFullYear();
 
-const XIcon = () => (
-  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-  </svg>
-);
-
-/*const socialLinks = [
-  { icon: 'https://cdn-icons-png.flaticon.com/128/15047/15047435.png', href: 'https://www.facebook.com/asm.jony.2024', label: 'Facebook', colorClass: 'social-facebook' },
-  { icon: 'https://cdn-icons-png.flaticon.com/128/174/174855.png', href: 'https://www.instagram.com/jonymia321/', label: 'Instagram', colorClass: 'social-instagram' },
-  { icon: 'https://cdn-icons-png.flaticon.com/128/3991/3991775.png', href: 'https://www.linkedin.com/in/jony-mia-243ab4334/', label: 'LinkedIn', colorClass: 'social-linkedin' },
-  { icon: XIcon, href: 'https://x.com/JonyMia220812', label: 'X (Twitter)', colorClass: 'social-twitter' },
-  { icon: Youtube, href: 'https://www.youtube.com/@jonymia1972', label: 'YouTube', colorClass: 'social-youtube' },
- // { CustomIcon: TikTokIcon, href: '#', label: 'TikTok', colorClass: 'social-tiktok' },
-  // { CustomIcon: ThreadsIcon, href: '#', label: 'Threads', colorClass: 'social-threads' },
-];
-*/
 const socialLinks = [
-  {
-    icon: 'https://cdn-icons-png.flaticon.com/128/15047/15047435.png',
-    href: 'https://www.facebook.com/asm.jony.2024',
-    label: 'Facebook',
-    //colorClass: 'social-facebook'
-  },
-  {
-    icon: 'https://cdn-icons-png.flaticon.com/128/174/174855.png',
-    href: 'https://www.instagram.com/jonymia321/',
-    label: 'Instagram',
-   // colorClass: 'social-instagram'
-  },
-  {
-    icon: 'https://cdn-icons-png.flaticon.com/128/3991/3991775.png',
-    href: 'https://www.linkedin.com/in/jony-mia-243ab4334/',
-    label: 'LinkedIn',
-    //colorClass: 'social-linkedin'
-  },
-  {
-    icon: 'https://cdn-icons-png.flaticon.com/128/5969/5969020.png',
-    href: 'https://x.com/JonyMia220812',
-    label: 'X (Twitter)',
-  //  colorClass: 'social-twitter'
-  },
-  {
-    icon: 'https://cdn-icons-png.flaticon.com/128/1384/1384060.png',
-    href: 'https://www.youtube.com/@jonymia1972',
-    label: 'YouTube',
-  //  colorClass: 'social-youtube'
-  },
-  // { CustomIcon: TikTokIcon, href: '#', label: 'TikTok', colorClass: 'social-tiktok' },
-  // { CustomIcon: ThreadsIcon, href: '#', label: 'Threads', colorClass: 'social-threads' },
+  { icon: 'https://cdn-icons-png.flaticon.com/128/15047/15047435.png', href: 'https://www.facebook.com/asm.jony.2024', label: 'Facebook', color: '#1877F2' },
+  { icon: 'https://cdn-icons-png.flaticon.com/128/174/174855.png', href: 'https://www.instagram.com/jonymia321/', label: 'Instagram', color: '#E1306C' },
+  { icon: 'https://cdn-icons-png.flaticon.com/128/3991/3991775.png', href: 'https://www.linkedin.com/in/jony-mia-243ab4334/', label: 'LinkedIn', color: '#0A66C2' },
+  { icon: 'https://cdn-icons-png.flaticon.com/128/5969/5969020.png', href: 'https://x.com/JonyMia220812', label: 'X (Twitter)', color: '#ffffff' },
+  { icon: 'https://cdn-icons-png.flaticon.com/128/1384/1384060.png', href: 'https://www.youtube.com/@jonymia1972', label: 'YouTube', color: '#FF0000' },
 ];
 
 const quickLinks = [
@@ -85,51 +29,99 @@ const quickLinks = [
   { name: 'Contact', href: '#contact' },
 ];
 
-const Footer = () => {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+const services = [
+  'WordPress Development',
+  'E-commerce Solutions',
+  'Landing Pages',
+  'React Development',
+  'UI/UX Design',
+  'SEO Optimization',
+];
 
+const Footer = () => {
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) element.scrollIntoView({ behavior: 'smooth' });
+    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <footer className="bg-card border-t border-border">
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+    <footer className="relative overflow-hidden bg-card/40 backdrop-blur-xl border-t border-border">
+      {/* Decorative gradient line */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary to-transparent" />
+
+      {/* Floating glow */}
+      <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full blur-3xl opacity-20 pointer-events-none"
+           style={{ background: 'var(--gradient-glow)' }} />
+
+      <div className="container mx-auto px-4 py-16 relative">
+        <div className="grid md:grid-cols-2 lg:grid-cols-12 gap-10">
           {/* Brand */}
-          <div>
-            <img src={logo} alt="Jony" className="h-24 mb-4" />
-            <p className="text-muted-foreground mb-6">
-              Professional Web Developer specializing in WordPress, React, 
-              and modern web technologies. Let's build something amazing together.
+          <div className="lg:col-span-4">
+            <img src={logo} alt="Jony" className="h-20 mb-4" />
+            <p className="text-muted-foreground mb-6 text-sm leading-relaxed">
+              Professional Web Developer crafting bold, futuristic experiences with WordPress,
+              React, and modern web technologies.
             </p>
-            <div className="flex flex-wrap gap-2">
-              {socialLinks.map(({ icon: Icon, href, label }) => (
+
+            {/* Newsletter */}
+            <div className="mb-6">
+              <div className="flex items-center gap-2 mb-3">
+                <Sparkles size={14} className="text-primary" />
+                <span className="text-sm font-semibold uppercase tracking-wider">Stay Updated</span>
+              </div>
+              <form
+                onSubmit={(e) => e.preventDefault()}
+                className="flex items-center gap-2 p-1 rounded-full border border-border bg-background/60 backdrop-blur-sm focus-within:border-primary transition-colors"
+              >
+                <input
+                  type="email"
+                  placeholder="your@email.com"
+                  className="flex-1 bg-transparent px-4 py-2 text-sm outline-none placeholder:text-muted-foreground"
+                />
+                <button
+                  type="submit"
+                  aria-label="Subscribe"
+                  className="w-9 h-9 rounded-full bg-gradient-primary flex items-center justify-center text-primary-foreground hover:scale-110 transition-transform"
+                >
+                  <Send size={14} />
+                </button>
+              </form>
+            </div>
+
+            {/* Socials */}
+            <div className="flex flex-wrap gap-3">
+              {socialLinks.map(({ icon, href, label, color }) => (
                 <a
                   key={label}
                   href={href}
+                  target="_blank"
+                  rel="noreferrer"
                   aria-label={label}
-                  className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110`}
+                  className="group relative w-11 h-11 rounded-xl border border-border bg-background/40 backdrop-blur-sm flex items-center justify-center transition-all duration-300 hover:-translate-y-1 hover:border-primary"
+                  style={{ ['--glow' as any]: color }}
                 >
-                  {/* {Icon ? <Icon size={18} /> : CustomIcon && <CustomIcon />} */}
-                  <img src={`${Icon}`} width={28} alt="" />
+                  <span
+                    className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-30 blur-md transition-opacity"
+                    style={{ background: color }}
+                  />
+                  <img src={icon} width={22} height={22} alt={label} className="relative z-10" />
                 </a>
               ))}
             </div>
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h4 className="font-bold text-lg mb-6">Quick Links</h4>
+          <div className="lg:col-span-2">
+            <h4 className="font-bold text-base mb-5 flex items-center gap-2">
+              <span className="w-1 h-4 rounded-full bg-gradient-primary" />
+              Links
+            </h4>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <button
                     onClick={() => scrollToSection(link.href)}
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors hover:translate-x-1 inline-block duration-300"
                   >
                     {link.name}
                   </button>
@@ -139,39 +131,48 @@ const Footer = () => {
           </div>
 
           {/* Services */}
-          <div>
-            <h4 className="font-bold text-lg mb-6">Services</h4>
-            <ul className="space-y-3 text-muted-foreground">
-              <li>WordPress Development</li>
-              <li>E-commerce Solutions</li>
-              <li>Landing Pages</li>
-              <li>React Development</li>
-              <li>UI/UX Design</li>
-              <li>SEO Optimization</li>
+          <div className="lg:col-span-3">
+            <h4 className="font-bold text-base mb-5 flex items-center gap-2">
+              <span className="w-1 h-4 rounded-full bg-gradient-primary" />
+              Services
+            </h4>
+            <ul className="space-y-3 text-sm text-muted-foreground">
+              {services.map((s) => (
+                <li key={s} className="hover:text-primary transition-colors cursor-default">
+                  {s}
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Contact */}
-          <div>
-            <h4 className="font-bold text-lg mb-6">Contact</h4>
+          <div className="lg:col-span-3">
+            <h4 className="font-bold text-base mb-5 flex items-center gap-2">
+              <span className="w-1 h-4 rounded-full bg-gradient-primary" />
+              Get in Touch
+            </h4>
             <ul className="space-y-4">
-              <li className="flex items-center gap-3 text-muted-foreground">
-                <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
-                  <Mail size={18} className="text-primary" />
+              <li className="flex items-center gap-3 group">
+                <div className="w-10 h-10 rounded-xl border border-border bg-background/40 flex items-center justify-center group-hover:border-primary group-hover:bg-primary/10 transition-all">
+                  <Mail size={16} className="text-primary" />
                 </div>
-                <span>ajonymia321@gmail.com</span>
+                <a href="mailto:ajonymia321@gmail.com" className="text-sm text-muted-foreground group-hover:text-foreground transition-colors break-all">
+                  ajonymia321@gmail.com
+                </a>
               </li>
-              <li className="flex items-center gap-3 text-muted-foreground">
-                <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
-                  <Phone size={18} className="text-primary" />
+              <li className="flex items-center gap-3 group">
+                <div className="w-10 h-10 rounded-xl border border-border bg-background/40 flex items-center justify-center group-hover:border-primary group-hover:bg-primary/10 transition-all">
+                  <Phone size={16} className="text-primary" />
                 </div>
-                <span><a href="https://wa.me/+8801770522886">+8801770522886</a></span>
+                <a href="https://wa.me/+8801770522886" className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+                  +880 1770 522886
+                </a>
               </li>
-              <li className="flex items-center gap-3 text-muted-foreground">
-                <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
-                  <MapPin size={18} className="text-primary" />
+              <li className="flex items-center gap-3 group">
+                <div className="w-10 h-10 rounded-xl border border-border bg-background/40 flex items-center justify-center group-hover:border-primary group-hover:bg-primary/10 transition-all">
+                  <MapPin size={16} className="text-primary" />
                 </div>
-                <span>Bangladesh</span>
+                <span className="text-sm text-muted-foreground">Bangladesh</span>
               </li>
             </ul>
           </div>
@@ -179,18 +180,24 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-border">
+      <div className="border-t border-border/60 backdrop-blur-sm relative">
         <div className="container mx-auto px-4 py-6">
-          <div className="flex flex-col md:flex-row items-center justify-around gap-4">
-            <p className="text-muted-foreground text-center text-sm flex items-center gap-1">
-              © {year} Developed by <span className='text-blue-500'>Jony</span> .<Heart size={14} className="text-red-500 fill-red-500" /> All rights reserved.
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-muted-foreground text-center text-sm flex items-center gap-1.5 flex-wrap justify-center">
+              © {year} Crafted with
+              <Heart size={14} className="text-red-500 fill-red-500 animate-pulse" />
+              by <span className="text-gradient font-semibold">Jony</span>
+              <span className="text-border mx-1">•</span>
+              All rights reserved.
             </p>
-            
+
             <button
               onClick={scrollToTop}
-              className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+              aria-label="Back to top"
+              className="group flex items-center gap-2 px-4 py-2 rounded-full border border-border hover:border-primary text-sm text-muted-foreground hover:text-primary transition-all hover:-translate-y-0.5"
             >
-              Back to Top <ArrowUp size={18} />
+              Back to Top
+              <ArrowUp size={16} className="group-hover:-translate-y-0.5 transition-transform" />
             </button>
           </div>
         </div>

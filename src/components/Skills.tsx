@@ -14,15 +14,15 @@ const skills = [
   { name: 'JavaScript', percentage: 90 },
   { name: 'TypeScript', percentage: 85 },
   { name: 'Tailwind CSS', percentage: 92 },
-  { name: 'PHP', percentage: 80 },
+  // { name: 'PHP', percentage: 80 },
   { name: 'MySQL', percentage: 78 },
   { name: 'Elementor', percentage: 96 },
-  { name: 'WooCommerce', percentage: 92 },
-  { name: 'CartFlows', percentage: 88 },
+  // { name: 'WooCommerce', percentage: 92 },
+  // { name: 'CartFlows', percentage: 88 },
   { name: 'MongoDB', percentage: 80 },
   { name: 'Express.js', percentage: 82 },
   { name: 'Node.js', percentage: 84 },
-  { name: 'React (MERN)', percentage: 88 },
+  // { name: 'React (MERN)', percentage: 88 },
 ];
 
 const ExpertiseCard = ({ title, items, colorClass, borderColor }: { title: string; items: string[]; colorClass: string; borderColor: string }) => (

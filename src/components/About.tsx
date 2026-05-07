@@ -54,15 +54,14 @@ const About = () => {
           <div className="glass-card p-8">
             <h3 className="text-2xl font-bold mb-4 text-gradient">{t('about.whoAmI')}</h3>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              {t('about.description1')}
+              I’m a passionate MERN Stack Developer who enjoys building modern, responsive, and user-focused web applications. I work with MongoDB, Express.js, React, and Node.js to create full-stack solutions that are fast, scalable, and efficient. I have a strong interest in clean UI design, performance optimization, and solving real-world problems through technology.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              {t('about.description2')}
+              As a developer, I continuously explore new tools, frameworks, and best practices to improve my skills and stay updated with the latest trends in web development. I enjoy turning ideas into functional digital products and working on projects that combine creativity with logic.
             </p>
-            {/* <p className="text-muted-foreground leading-relaxed">
-              {t('about.description3')} <span className="text-primary font-semibold">Topper IT</span> {t('about.and')}
-              <span className="text-primary font-semibold"> Fast IT Care</span>{t('about.description4')}
-            </p> */}
+            <p className="text-muted-foreground leading-relaxed">
+              I’m also interested in backend architecture, APIs, database management, and creating smooth user experiences across devices. My goal is to build impactful applications while growing as a professional developer in the tech industry.
+            </p>
           </div>
 
           {/* Stats Cards */}
@@ -84,7 +83,7 @@ const About = () => {
         </div>
 
         {/* Experience Timeline */}
-        <div className="mt-16 about-content">
+        {/* <div className="mt-16 about-content">
           <h3 className="text-2xl font-bold text-center mb-8">
             {t('about.experience')} <span className="text-gradient">{t('about.experienceHighlight')}</span>
           </h3>
@@ -104,7 +103,7 @@ const About = () => {
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

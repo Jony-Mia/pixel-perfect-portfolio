@@ -128,7 +128,7 @@ const Contact = () => {
                   boxShadow: `0 8px 24px ${accent}40`,
                 }}
               >
-                <Icon className="text-primary-foreground" size={24} />
+                <Icon className="text-primary" size={24} />
               </div>
 
               <p className="text-xs uppercase tracking-wider text-muted-foreground mb-1.5">

@@ -59,10 +59,10 @@ const About = () => {
             <p className="text-muted-foreground leading-relaxed mb-6">
               {t('about.description2')}
             </p>
-            <p className="text-muted-foreground leading-relaxed">
+            {/* <p className="text-muted-foreground leading-relaxed">
               {t('about.description3')} <span className="text-primary font-semibold">Topper IT</span> {t('about.and')}
               <span className="text-primary font-semibold"> Fast IT Care</span>{t('about.description4')}
-            </p>
+            </p> */}
           </div>
 
           {/* Stats Cards */}

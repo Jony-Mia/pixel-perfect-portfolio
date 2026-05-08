@@ -67,12 +67,12 @@ const Services = () => {
           {services.map(({ Icon, title, description, accent }, i) => (
             <div
               key={title}
-              className="service-card group relative rounded-2xl p-6 glass-card overflow-hidden transition-all duration-500 hover:-translate-y-2"
+              className="service-card group relative rounded-2xl p-6 glass-card overflow-hidden transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_20px_50px_-12px_hsl(var(--primary)/0.35)] card-shimmer card-glow-border"
               style={{ ['--accent' as any]: accent }}
             >
               {/* Hover glow */}
               <span
-                className="absolute -inset-px rounded-2xl opacity-0 group-hover:opacity-50 blur-xl transition-opacity duration-500 -z-10"
+                className="absolute -inset-px rounded-2xl opacity-0 group-hover:opacity-60 blur-xl transition-opacity duration-500 -z-10"
                 style={{ background: accent }}
               />
 

@@ -50,6 +50,7 @@ const Index = () => {
         <Footer />
         {/* <LanguageToggle /> */}
         <ThemeToggle />
+        </div>
       </div>
     </LanguageProvider>
   );

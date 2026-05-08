@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { ArrowRight, Download, Github, Instagram, Linkedin, Twitter } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import profileImage from '@/assets/profile.png';
+import TypingText from './TypingText';
 
 // Position tech badges around the profile (angle in degrees, 0 = top, clockwise)
 const techOrbits = [

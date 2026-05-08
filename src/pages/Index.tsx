@@ -17,6 +17,7 @@ import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import LanguageToggle from '@/components/LanguageToggle';
 import ThemeToggle from '@/components/ThemeToggle';
+import ParticleBackground from '@/components/ParticleBackground';
 
 const Index = () => {
   useEffect(() => {
@@ -29,7 +30,9 @@ const Index = () => {
 
   return (
     <LanguageProvider>
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background relative">
+        <ParticleBackground />
+        <div className="relative z-10">
         <Navbar />
         <Hero />
         <About />
@@ -47,6 +50,7 @@ const Index = () => {
         <Footer />
         {/* <LanguageToggle /> */}
         <ThemeToggle />
+        </div>
       </div>
     </LanguageProvider>
   );

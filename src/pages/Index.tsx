@@ -30,7 +30,9 @@ const Index = () => {
 
   return (
     <LanguageProvider>
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background relative">
+        <ParticleBackground />
+        <div className="relative z-10">
         <Navbar />
         <Hero />
         <About />

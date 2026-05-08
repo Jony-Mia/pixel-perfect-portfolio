@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { ArrowRight, Download, Github, Instagram, Linkedin, Twitter } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import profileImage from '@/assets/profile.png';
+import TypingText from './TypingText';
 
 // Position tech badges around the profile (angle in degrees, 0 = top, clockwise)
 const techOrbits = [
@@ -66,8 +67,17 @@ const Hero = () => {
               <span className="text-foreground">{t('hero.name').split(' ')[0]} </span>
               <span className="text-gradient">{t('hero.name').split(' ').slice(1).join(' ') || ''}</span>
             </h1>
-            <h2 className="text-2xl md:text-3xl text-foreground/90 font-semibold mb-5">
-              {t('hero.title')}
+            <h2 className="text-2xl md:text-3xl text-foreground/90 font-semibold mb-5 min-h-[2.25rem] md:min-h-[2.75rem]">
+              <TypingText
+                words={[
+                  t('hero.title'),
+                  'React.js Developer',
+                  'Next.js Expert',
+                  'UI/UX Enthusiast',
+                  'MERN Stack Developer',
+                ]}
+                className="text-gradient"
+              />
             </h2>
 
             {/* Role chips */}

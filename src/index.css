@@ -442,68 +442,23 @@
   100% { background-position: 0% 50%; }
 }
 
-/* Cursor-following spotlight (set --mx / --my from JS or CSS hover fallback) */
+/* Border-only hover: subtle lift, no background fills */
 .card-shimmer {
   position: relative;
-  overflow: hidden;
-  --mx: 50%;
-  --my: 0%;
   transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.card-shimmer::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: radial-gradient(
-    320px circle at var(--mx) var(--my),
-    hsl(var(--primary) / 0.22),
-    transparent 55%
-  );
-  opacity: 0;
-  transition: opacity 0.45s ease;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.card-shimmer::after {
-  content: '';
-  position: absolute;
-  top: -120%;
-  left: -40%;
-  width: 60%;
-  height: 340%;
-  background: linear-gradient(
-    115deg,
-    transparent 35%,
-    hsl(var(--primary) / 0.18) 50%,
-    transparent 65%
-  );
-  transform: translateX(-160%) rotate(8deg);
-  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
-  pointer-events: none;
-  z-index: 1;
-}
-
 .card-shimmer:hover {
-  transform: translateY(-6px) scale(1.015);
+  transform: translateY(-6px);
 }
 
-.card-shimmer:hover::before {
-  opacity: 1;
-}
-
-.card-shimmer:hover::after {
-  transform: translateX(420%) rotate(8deg);
-}
-
-/* Neon animated border that ignites on hover */
+/* Animated neon border that traces the edge on hover */
 .card-glow-border {
   position: relative;
   isolation: isolate;
 }
 
+/* Rotating conic-gradient border (always visible faintly, ignites on hover) */
 .card-glow-border::before {
   content: '';
   position: absolute;
@@ -512,25 +467,58 @@
   padding: 1.5px;
   background: conic-gradient(
     from var(--angle, 0deg),
-    hsl(var(--primary) / 0.9),
-    hsl(var(--accent) / 0.9),
-    transparent 35%,
-    hsl(var(--primary) / 0.9)
+    transparent 0deg,
+    hsl(var(--primary)) 60deg,
+    hsl(var(--accent)) 120deg,
+    transparent 200deg,
+    transparent 360deg
   );
   -webkit-mask:
     linear-gradient(#000 0 0) content-box,
     linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
           mask-composite: exclude;
-  animation: spin-angle 6s linear infinite;
+  animation: spin-angle 4s linear infinite;
   pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  z-index: -1;
+  opacity: 0.25;
+  transition: opacity 0.4s ease, filter 0.4s ease;
+  z-index: 1;
 }
 
 .card-glow-border:hover::before {
   opacity: 1;
+  filter: drop-shadow(0 0 6px hsl(var(--primary) / 0.6));
+}
+
+/* Outer soft glow ring that pulses on hover (border-side only) */
+.card-glow-border::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary) / 0.8),
+    hsl(var(--accent) / 0.8),
+    hsl(var(--primary) / 0.8)
+  );
+  background-size: 200% 200%;
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  filter: blur(6px);
+  transition: opacity 0.5s ease;
+  animation: gradient-shift 3s ease infinite;
+  z-index: 0;
+}
+
+.card-glow-border:hover::after {
+  opacity: 0.85;
 }
 
 @property --angle {

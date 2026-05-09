@@ -26,6 +26,19 @@ const Index = () => {
       document.documentElement.classList.add('dark');
       localStorage.setItem('theme', 'dark');
     }
+
+    // Cursor-following spotlight on .card-shimmer
+    const handleMove = (e: MouseEvent) => {
+      const target = (e.target as HTMLElement)?.closest('.card-shimmer') as HTMLElement | null;
+      if (!target) return;
+      const rect = target.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      target.style.setProperty('--mx', `${x}%`);
+      target.style.setProperty('--my', `${y}%`);
+    };
+    window.addEventListener('mousemove', handleMove);
+    return () => window.removeEventListener('mousemove', handleMove);
   }, []);
 
   return (

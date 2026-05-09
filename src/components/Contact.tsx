@@ -50,6 +50,41 @@ const contactItems = [
 
 const Contact = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setForm((p) => ({ ...p, [name]: value }));
+    if (errors[name]) setErrors((p) => ({ ...p, [name]: '' }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const result = contactSchema.safeParse(form);
+    if (!result.success) {
+      const fieldErrors: Record<string, string> = {};
+      result.error.issues.forEach((issue) => {
+        if (issue.path[0]) fieldErrors[issue.path[0] as string] = issue.message;
+      });
+      setErrors(fieldErrors);
+      return;
+    }
+    setSubmitting(true);
+    const { name, email, subject, message } = result.data;
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+    const mailto = `mailto:ajonymia321@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+    window.location.href = mailto;
+    setTimeout(() => {
+      setSubmitting(false);
+      toast({
+        title: 'Message ready to send',
+        description: 'Your email client has been opened with your message.',
+      });
+      setForm({ name: '', email: '', subject: '', message: '' });
+    }, 600);
+  };
 
   useEffect(() => {
     const ctx = gsap.context(() => {

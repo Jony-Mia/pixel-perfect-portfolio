@@ -1,7 +1,19 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Mail, Phone, MapPin, Globe, MessageCircle, Sparkles, ArrowUpRight } from 'lucide-react';
+import { Mail, Phone, MapPin, Globe, MessageCircle, Sparkles, ArrowUpRight, Send, User, Loader2 } from 'lucide-react';
+import { z } from 'zod';
+import { toast } from '@/hooks/use-toast';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Label } from '@/components/ui/label';
+
+const contactSchema = z.object({
+  name: z.string().trim().min(1, 'Name is required').max(100, 'Name must be under 100 characters'),
+  email: z.string().trim().email('Invalid email address').max(255),
+  subject: z.string().trim().min(1, 'Subject is required').max(150, 'Subject must be under 150 characters'),
+  message: z.string().trim().min(5, 'Message is too short').max(2000, 'Message must be under 2000 characters'),
+});
 
 gsap.registerPlugin(ScrollTrigger);
 

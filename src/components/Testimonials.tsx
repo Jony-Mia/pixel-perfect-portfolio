@@ -79,7 +79,7 @@ const Testimonials = () => {
           >
             {testimonials.map((t, idx) => (
               <SwiperSlide key={idx} className="h-auto">
-                <div className="group relative h-full rounded-2xl p-7 glass-card overflow-hidden transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_20px_50px_-12px_hsl(var(--primary)/0.35)] card-shimmer card-glow-border">
+                <div className="group relative h-full rounded-2xl p-7 glass-card overflow-hidden transition-all duration-500 hover:-translate-y-2">
                   {/* Hover glow */}
                   <span
                     className="absolute -inset-px rounded-2xl opacity-0 group-hover:opacity-40 blur-xl transition-opacity duration-500 -z-10"

@@ -15,13 +15,13 @@ import Smartphone from '@/assets/phone.png';
 gsap.registerPlugin(ScrollTrigger);
 
 const services = [
-  { Icon: Globe, title: 'WordPress Development', description: 'Custom WordPress websites with premium themes, plugins, and complete functionality tailored to your needs.', accent: 'hsl(var(--primary))' },
+  { Icon: Globe, title: 'WordPress Development', description: 'Custom WordPress websites with premium themes, plugins, and complete functionality tailored to your needs.', accent: 'hsl(var(--accent))' },
   { Icon: ShoppingCart, title: 'E-commerce Solutions', description: 'Complete WooCommerce stores with payment gateways, inventory management, and sales funnels using CartFlows.', accent: 'hsl(var(--accent))' },
-  { Icon: Rocket, title: 'Landing Page Design', description: 'High-converting landing pages designed to capture leads and drive sales with optimized user experience.', accent: 'hsl(280 70% 55%)' },
-  { Icon: Palette, title: 'UI/UX Design', description: 'Beautiful, intuitive interfaces designed with Elementor Pro and modern design principles.', accent: 'hsl(var(--primary))' },
+  { Icon: Rocket, title: 'Landing Page Design', description: 'High-converting landing pages designed to capture leads and drive sales with optimized user experience.', accent: /*'hsl(280 70% 55%)'*/ 'hsl(var--accent))' },
+  { Icon: Palette, title: 'UI/UX Design', description: 'Beautiful, intuitive interfaces designed with Elementor Pro and modern design principles.', accent: 'hsl(var(--accent))' },
   { Icon: React, title: 'React Development', description: 'Modern React applications with TypeScript, state management, and responsive Tailwind CSS styling.', accent: 'hsl(var(--accent))' },
-  { Icon: Settings, title: 'Website Maintenance', description: 'Ongoing support, updates, backups, security monitoring, and performance optimization services.', accent: 'hsl(280 70% 55%)' },
-  { Icon: Search, title: 'SEO Optimization', description: 'On-page SEO, speed optimization, and technical SEO to improve your search engine rankings.', accent: 'hsl(var(--primary))' },
+  { Icon: Settings, title: 'Website Maintenance', description: 'Ongoing support, updates, backups, security monitoring, and performance optimization services.', accent: /*'hsl(280 70% 55%)'*/ 'hsl(var(--accent))' },
+  { Icon: Search, title: 'SEO Optimization', description: 'On-page SEO, speed optimization, and technical SEO to improve your search engine rankings.', accent: 'hsl(var(--accent))' },
   { Icon: Smartphone, title: 'Responsive Design', description: 'Mobile-first, fully responsive websites that look perfect on all devices and screen sizes.', accent: 'hsl(var(--accent))' },
 ];
 
@@ -67,12 +67,12 @@ const Services = () => {
           {services.map(({ Icon, title, description, accent }, i) => (
             <div
               key={title}
-              className="service-card group relative rounded-2xl p-6 glass-card overflow-hidden transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_20px_50px_-12px_hsl(var(--primary)/0.35)] card-shimmer card-glow-border"
+              className="service-card group relative rounded-2xl p-6 glass-card overflow-hidden transition-all duration-500 hover:-translate-y-2"
               style={{ ['--accent' as any]: accent }}
             >
               {/* Hover glow */}
               <span
-                className="absolute -inset-px rounded-2xl opacity-0 group-hover:opacity-60 blur-xl transition-opacity duration-500 -z-10"
+                className="absolute -inset-px rounded-2xl opacity-0 group-hover:opacity-50 blur-xl transition-opacity duration-500 -z-10"
                 style={{ background: accent }}
               />
 

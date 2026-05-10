@@ -77,26 +77,26 @@ const defaults = {
 const projects: Project[] = [
   { name: 'Homely', url: 'https://homely.com.bd', category: 'websites', image: homely },
   { name: 'Kids Playnix', url: 'https://kidzplaynix.com', category: 'websites', image: kidsPlaynix },
-  { name: 'Royal Park', url: 'https://royalparkattire.com/', category: 'websites', image: royal },
+  // { name: 'Royal Park', url: 'https://royalparkattire.com/', category: 'websites', image: royal },
   { name: 'Khalifa Fashion World', url: 'https://khalifafashionworld.com', category: 'websites', image: khalifaFashionWorld },
   { name: 'Hudaway BD', url: 'https://hudawaybd.com', category: 'websites', image: hudawayBD },
   { name: 'Divine Aroma BD', url: 'https://divinearomabd.com', category: 'websites', image: divineAroma },
   { name: 'Qiblaa', url: 'https://qiblaa.com', category: 'websites', image: Qiblaa },
   { name: 'Babies Haven BD', url: 'https://babieshavenbd.com', category: 'websites', image: babiesHaven },
-  { name: 'Solution BD', url: 'https://solutionbd.top', category: 'websites', image: solutionBD },
+  // { name: 'Solution BD', url: 'https://solutionbd.top', category: 'websites', image: solutionBD },
   { name: 'Bismillah Cargo', url: 'https://bismillahcargo.com.bd', category: 'websites', image: cargoShipping },
-  { name: 'Rafaa Online', url: 'https://rafaaonline.com', category: 'websites', image: rafaOnline },
-  { name: 'Bismillah Nogor', url: 'https://bismillahnogor.com', category: 'websites', image: bisNogor },
-  { name: 'Solution BD Landing', url: 'https://solutionbd.top', category: 'landing-pages', image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop' },
+  // { name: 'Rafaa Online', url: 'https://rafaaonline.com', category: 'websites', image: rafaOnline },
+  // { name: 'Bismillah Gor', url: 'https://bismillahnogor.com', category: 'websites', image: bisNogor },
+  // { name: 'Solution BD Landing', url: 'https://solutionbd.top', category: 'landing-pages', image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop' },
   { name: 'Vitalix BD', url: 'https://vitalixbd.com/vitalix-bd-ananta', category: 'landing-pages', image: vitalixBD },
-  { name: 'Bismillah Nogor Landing', url: 'https://bismillahnogor.com', category: 'landing-pages', image: 'https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?w=400&h=250&fit=crop' },
-  { name: 'Gopali Pitha', url: 'https://gopalipitha.com', category: 'landing-pages', image: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&h=250&fit=crop' },
+  // { name: 'Bismillah Nogor Landing', url: 'https://bismillahnogor.com', category: 'landing-pages', image: 'https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?w=400&h=250&fit=crop' },
+  // { name: 'Gopali Pitha', url: 'https://gopalipitha.com', category: 'landing-pages', image: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&h=250&fit=crop' },
   { name: 'Chandura', url: 'https://chandura.com', category: 'landing-pages', image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=250&fit=crop' },
-  { name: 'Trendy Book BD', url: 'https://trendybookbd.com', category: 'landing-pages', image: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400&h=250&fit=crop' },
+  // { name: 'Trendy Book BD', url: 'https://trendybookbd.com', category: 'landing-pages', image: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400&h=250&fit=crop' },
   { name: 'Barakah Publication', url: 'https://barakahpublication.shop', category: 'landing-pages', image: BarakahPublication },
-  { name: 'Masud Telecom BD', url: 'https://masudtelecombd.com', category: 'landing-pages', image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&h=250&fit=crop' },
+  // { name: 'Masud Telecom BD', url: 'https://masudtelecombd.com', category: 'landing-pages', image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&h=250&fit=crop' },
   { name: 'Sakura Agency', url: 'https://www.sakura.agency', category: 'landing-pages', image: sakura },
-  { name: 'Kids Dream Drape', url: 'https://kids.dreamdrapebd.com', category: 'landing-pages', image: 'https://images.unsplash.com/photo-1596870230751-ebdfce98ec42?w=400&h=250&fit=crop' },
+  // { name: 'Kids Dream Drape', url: 'https://kids.dreamdrapebd.com', category: 'landing-pages', image: 'https://images.unsplash.com/photo-1596870230751-ebdfce98ec42?w=400&h=250&fit=crop' },
 ];
 
 const getDetails = (p: Project) => {
@@ -179,7 +179,7 @@ const Portfolio = () => {
               <button
                 key={project.url + project.name}
                 onClick={() => setSelected(project)}
-                className="project-card professional-card overflow-hidden group relative text-left card-shimmer card-glow-border transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_20px_50px_-12px_hsl(var(--primary)/0.45)] hover:border-primary/60"
+                className="project-card professional-card overflow-hidden group relative text-left hover:-translate-y-2 hover:shadow-[0_20px_50px_-12px_hsl(var(--primary)/0.45)] hover:border-primary/60"
               >
                 <div className="aspect-video overflow-hidden relative">
                   <img

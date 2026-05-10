@@ -13,6 +13,7 @@ import PersonalPhotos from '@/components/PersonalPhotos';
 import Gallery from '@/components/Gallery';
 import Sponsors from '@/components/Sponsors';
 import CTA from '@/components/CTA';
+import Education from '@/components/Education';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import LanguageToggle from '@/components/LanguageToggle';
@@ -36,7 +37,9 @@ const Index = () => {
         <Navbar />
         <Hero />
         <About />
+        <Education/>
         <Skills />
+
         <Portfolio />
         <Services />
         {/* <Pricing /> */}
@@ -44,6 +47,7 @@ const Index = () => {
         {/* <Certifications /> */}
         {/* <PersonalPhotos /> */}
         {/* <Gallery /> */}
+
         <Sponsors />
         <CTA />
         <Contact />

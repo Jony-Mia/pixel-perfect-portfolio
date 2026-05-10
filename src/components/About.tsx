@@ -13,7 +13,7 @@ const About = () => {
   const stats = [
     { icon: 'https://cdn-icons-png.flaticon.com/128/5517/5517030.png', value: '2+', label: t('hero.yearsExp') },
     { icon: 'https://cdn-icons-png.flaticon.com/128/3113/3113025.png', value: '95+', label: t('hero.projects') },
-    { icon: 'https://cdn-icons-png.flaticon.com/128/1256/1256650.png', value: '50+', label: t('hero.clients') },
+    // { icon: 'https://cdn-icons-png.flaticon.com/128/1256/1256650.png', value: '50+', label: t('hero.clients') },
     { icon: 'https://cdn-icons-png.flaticon.com/128/15189/15189269.png', value: '10+', label: t('about.technologies') },
   ];
 

@@ -16,7 +16,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const services = [
   { Icon: Globe, title: 'WordPress Development', description: 'Custom WordPress websites with premium themes, plugins, and complete functionality tailored to your needs.', accent: 'hsl(var(--primary))' },
-  { Icon: ShwwwwwwwwwoppingCart, title: 'E-commerce Solutions', description: 'Complete WooCommerce stores with payment gateways, inventory management, and sales funnels using CartFlows.', accent: 'hsl(var(--accent))' },
+  { Icon: ShoppingCart, title: 'E-commerce Solutions', description: 'Complete WooCommerce stores with payment gateways, inventory management, and sales funnels using CartFlows.', accent: 'hsl(var(--accent))' },
   { Icon: Rocket, title: 'Landing Page Design', description: 'High-converting landing pages designed to capture leads and drive sales with optimized user experience.', accent: 'hsl(280 70% 55%)' },
   { Icon: Palette, title: 'UI/UX Design', description: 'Beautiful, intuitive interfaces designed with Elementor Pro and modern design principles.', accent: 'hsl(var(--primary))' },
   { Icon: React, title: 'React Development', description: 'Modern React applications with TypeScript, state management, and responsive Tailwind CSS styling.', accent: 'hsl(var(--accent))' },

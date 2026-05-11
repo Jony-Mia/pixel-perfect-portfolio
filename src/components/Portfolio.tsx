@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useMemo } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ExternalLink, Code2, AlertTriangle, Lightbulb } from 'lucide-react';
+import { ExternalLink, Code2, AlertTriangle, Lightbulb, ChevronLeft, ChevronRight } from 'lucide-react';
 import {
   Dialog,
   DialogContent,
@@ -85,7 +85,7 @@ const projects: Project[] = [
   { name: 'Babies Haven BD', url: 'https://babieshavenbd.com', category: 'websites', image: babiesHaven },
   // { name: 'Solution BD', url: 'https://solutionbd.top', category: 'websites', image: solutionBD },
   { name: 'Bismillah Cargo', url: 'https://bismillahcargo.com.bd', category: 'websites', image: cargoShipping },
-  // { name: 'Rafaa Online', url: 'https://rafaaonline.com', category: 'websites', image: rafaOnline },
+  { name: 'Rafaa Online', url: 'https://rafaaonline.com', category: 'websites', image: rafaOnline },
   // { name: 'Bismillah Gor', url: 'https://bismillahnogor.com', category: 'websites', image: bisNogor },
   // { name: 'Solution BD Landing', url: 'https://solutionbd.top', category: 'landing-pages', image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop' },
   { name: 'Vitalix BD', url: 'https://vitalixbd.com/vitalix-bd-ananta', category: 'landing-pages', image: vitalixBD },
@@ -109,32 +109,39 @@ const getDetails = (p: Project) => {
   };
 };
 
+const PROJECTS_PER_PAGE = 8;
+
 const Portfolio = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [activeCategory, setActiveCategory] = useState<Category>('all');
   const [selected, setSelected] = useState<Project | null>(null);
+  const [currentPage, setCurrentPage] = useState(1);
 
-  const filteredProjects = activeCategory === 'all'
-    ? projects
-    : projects.filter((p) => p.category === activeCategory);
+  const filteredProjects = useMemo(
+    () => activeCategory === 'all' ? projects : projects.filter((p) => p.category === activeCategory),
+    [activeCategory]
+  );
+
+  const totalPages = Math.max(1, Math.ceil(filteredProjects.length / PROJECTS_PER_PAGE));
+  const paginatedProjects = filteredProjects.slice(
+    (currentPage - 1) * PROJECTS_PER_PAGE,
+    currentPage * PROJECTS_PER_PAGE
+  );
+
+  useEffect(() => { setCurrentPage(1); }, [activeCategory]);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.fromTo(
-        '.portfolio-content',
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1, y: 0, duration: 0.8,
-          scrollTrigger: { trigger: sectionRef.current, start: 'top 80%' },
-        }
-      );
+      gsap.fromTo('.portfolio-content', { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, duration: 0.8,
+          scrollTrigger: { trigger: sectionRef.current, start: 'top 80%' } });
     }, sectionRef);
     return () => ctx.revert();
   }, []);
 
   useEffect(() => {
     gsap.fromTo('.project-card', { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.4, stagger: 0.05 });
-  }, [activeCategory]);
+  }, [activeCategory, currentPage]);
 
   const details = selected ? getDetails(selected) : null;
 
@@ -173,7 +180,7 @@ const Portfolio = () => {
 
         {/* Projects Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {filteredProjects.map((project) => {
+          {paginatedProjects.map((project) => {
             const d = getDetails(project);
             return (
               <button
@@ -209,7 +216,6 @@ const Portfolio = () => {
                   <p className="text-muted-foreground text-sm mt-1 line-clamp-2">
                     {d.description}
                   </p>
-                  {/* Tech tags preview */}
                   <div className="flex flex-wrap gap-1.5 mt-3">
                     {d.technologies.slice(0, 3).map((t) => (
                       <span key={t} className="text-[10px] font-medium px-2 py-0.5 rounded-md bg-secondary text-secondary-foreground border border-border">
@@ -227,6 +233,42 @@ const Portfolio = () => {
             );
           })}
         </div>
+
+        {/* Pagination */}
+        {totalPages > 1 && (
+          <div className="flex items-center justify-center gap-2 mt-12 portfolio-content">
+            <button
+              onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+              disabled={currentPage === 1}
+              aria-label="Previous page"
+              className="w-10 h-10 rounded-full border border-border bg-card/40 backdrop-blur flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 transition-all disabled:opacity-40 disabled:cursor-not-allowed"
+            >
+              <ChevronLeft size={18} />
+            </button>
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+              <button
+                key={page}
+                onClick={() => setCurrentPage(page)}
+                aria-current={currentPage === page ? 'page' : undefined}
+                className={`min-w-10 h-10 px-3 rounded-full font-medium text-sm transition-all duration-300 border ${
+                  currentPage === page
+                    ? 'bg-gradient-primary text-primary-foreground border-transparent shadow-[0_0_20px_hsl(var(--primary)/0.5)] scale-105'
+                    : 'bg-card/40 backdrop-blur text-muted-foreground border-border hover:border-primary/50 hover:text-primary'
+                }`}
+              >
+                {page}
+              </button>
+            ))}
+            <button
+              onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+              disabled={currentPage === totalPages}
+              aria-label="Next page"
+              className="w-10 h-10 rounded-full border border-border bg-card/40 backdrop-blur flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 transition-all disabled:opacity-40 disabled:cursor-not-allowed"
+            >
+              <ChevronRight size={18} />
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Project details modal */}

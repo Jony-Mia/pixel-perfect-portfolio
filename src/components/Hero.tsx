@@ -1,17 +1,19 @@
+
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ArrowRight, Download, Github, Instagram, Linkedin, Twitter } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import profileImage from '@/assets/profile.png';
+import TypingText from './TypingText';
 
 // Position tech badges around the profile (angle in degrees, 0 = top, clockwise)
 const techOrbits = [
   { name: 'HTML', icon: 'https://cdn-icons-png.flaticon.com/128/732/732212.png', angle: 0, color: 'hsl(14, 85%, 55%)' },
   { name: 'CSS', icon: 'https://cdn-icons-png.flaticon.com/128/732/732190.png', angle: 45, color: 'hsl(220, 75%, 55%)' },
   { name: 'JavaScript', icon: 'https://cdn-icons-png.flaticon.com/128/5968/5968292.png', angle: 90, color: 'hsl(50, 95%, 55%)' },
-  { name: 'Next.js', icon: 'https://cdn-icons-png.flaticon.com/128/15466/15466163.png', angle: 135, color: 'hsl(0, 0%, 90%)' },
+  { name: 'Next.js', icon: 'https://skillicons.dev/icons?i=nextjs', angle: 135, color: 'hsl(0, 0%, 90%)' },
   { name: 'React.js', icon: 'https://cdn-icons-png.flaticon.com/128/1126/1126012.png', angle: 180, color: 'hsl(195, 90%, 60%)' },
-  { name: 'Tailwind', icon: 'https://cdn-icons-png.flaticon.com/128/15484/15484303.png', angle: 225, color: 'hsl(195, 90%, 55%)' },
+  { name: 'Tailwind', icon: 'https://tailwindcss.com/_next/static/media/tailwindcss-mark.0~s.iziag2xd..svg', angle: 225, color: 'hsl(195, 90%, 55%)' },
   { name: 'Node.js', icon: 'https://cdn-icons-png.flaticon.com/128/5968/5968322.png', angle: 270, color: 'hsl(95, 60%, 50%)' },
   { name: 'TypeScript', icon: 'https://cdn-icons-png.flaticon.com/128/5968/5968381.png', angle: 315, color: 'hsl(215, 60%, 55%)' },
 ];
@@ -66,8 +68,17 @@ const Hero = () => {
               <span className="text-foreground">{t('hero.name').split(' ')[0]} </span>
               <span className="text-gradient">{t('hero.name').split(' ').slice(1).join(' ') || ''}</span>
             </h1>
-            <h2 className="text-2xl md:text-3xl text-foreground/90 font-semibold mb-5">
-              {t('hero.title')}
+            <h2 className="text-2xl md:text-3xl text-foreground/90 font-semibold mb-5 min-h-[2.25rem] md:min-h-[2.75rem]">
+              <TypingText
+                words={[
+                  t('hero.title'),
+                  'React.js Developer',
+                  'Next.js Expert',
+                  'UI/UX Enthusiast',
+                  'MERN Stack Developer',
+                ]}
+                className="text-gradient"
+              />
             </h2>
 
             {/* Role chips */}

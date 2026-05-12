@@ -3,11 +3,11 @@ import React from 'react';
 
 const Education = () => {
   return (
-    <div className='container mx-auto'>
+    <div className='container mx-auto dark'>
       <h2 className="sr-only">Academic qualifications with dark glassmorphism big feature cards</h2>
 
       <div className="g-root">
-        <div className="g-scene">
+        <div className="g-scene bg-white">
           <div className="g-orb g-orb-1"></div>
           <div className="g-orb g-orb-2"></div>
           <div className="g-orb g-orb-3"></div>

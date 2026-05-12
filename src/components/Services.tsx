@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Sparkles, ArrowUpRight, Check } from 'lucide-react';
+import { Sparkles, ArrowUpRight, Check, LayoutDashboard } from 'lucide-react';
 import {
   Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription,
 } from '@/components/ui/dialog';
@@ -33,40 +33,55 @@ const services: Service[] = [
     startingAt: '$150',
   },
   {
+    // id: 7,
+    Icon: "https://cdn-icons-png.flaticon.com/512/8323/8323511.png",
+    title: "Admin Dashboard Development",
+    related: [
+       "Analytics Dashboard",
+      "User Management",
+      "Data Visualization",
+      "Reports System",
+      "Role Management",
+      "Activity Monitoring",
+    ],
+    // startingAt: '$150',
+    description: "Create dynamic admin panels with analytics, charts, and management features.",
+  },
+  {
     Icon: ShoppingCart, title: 'E-commerce Solutions',
     description: 'Complete WooCommerce stores with payment gateways, inventory management, and sales funnels using CartFlows.',
     related: ['WooCommerce store setup', 'Payment gateway integration', 'Product import & catalog', 'Inventory & shipping rules', 'Subscriptions & memberships', 'Order & invoice automation'],
-    startingAt: '$250',
+    // startingAt: '$250',
   },
   {
     Icon: Rocket, title: 'Landing Page Design',
     description: 'High-converting landing pages designed to capture leads and drive sales with optimized user experience.',
     related: ['Single-product funnels', 'CartFlows order-bumps & upsells', 'Lead-gen pages', 'A/B testing setup', 'Pixel & analytics integration', 'Speed-optimized templates'],
-    startingAt: '$80',
+    // startingAt: '$80',
   },
-  {
-    Icon: Palette, title: 'UI/UX Design',
-    description: 'Beautiful, intuitive interfaces designed with Elementor Pro and modern design principles.',
-    related: ['Wireframing & prototyping', 'Figma to code', 'Design system creation', 'Mobile-first layouts', 'Micro-interactions', 'Accessibility audits'],
-    startingAt: '$120',
-  },
+  // {
+  //   Icon: Palette, title: 'UI/UX Design',
+  //   description: 'Beautiful, intuitive interfaces designed with Elementor Pro and modern design principles.',
+  //   related: ['Wireframing & prototyping', 'Figma to code', 'Design system creation', 'Mobile-first layouts', 'Micro-interactions', 'Accessibility audits'],
+  //   startingAt: '$120',
+  // },
   {
     Icon: ReactImg, title: 'React Development',
     description: 'Modern React applications with TypeScript, state management, and responsive Tailwind CSS styling.',
     related: ['Single-page applications', 'Dashboard & admin panels', 'REST/GraphQL integration', 'Authentication flows', 'Component library setup', 'Performance optimization'],
-    startingAt: '$200',
+    // startingAt: '$200',
   },
   {
     Icon: Settings, title: 'Website Maintenance',
     description: 'Ongoing support, updates, backups, security monitoring, and performance optimization services.',
     related: ['Plugin & core updates', 'Daily/weekly backups', 'Malware scanning & cleanup', 'Uptime monitoring', 'Speed optimization', 'Bug fixes & content edits'],
-    startingAt: '$50/mo',
+    // startingAt: '$50/mo',
   },
   {
     Icon: Search, title: 'SEO Optimization',
     description: 'On-page SEO, speed optimization, and technical SEO to improve your search engine rankings.',
     related: ['Keyword research', 'On-page optimization', 'Schema markup', 'Core Web Vitals tuning', 'Sitemap & robots.txt', 'Google Search Console setup'],
-    startingAt: '$100',
+    // startingAt: '$100',
   },
   {
     Icon: Smartphone, title: 'Responsive Design',

@@ -440,7 +440,7 @@
   100% { background-position: 1000px 0; }
 
 
-  background: hsl(var(--primary)) !important;
+  /* background: hsl(var(--primary)) !important; */
 }
 
 .swiper-pagination-bullet-active {

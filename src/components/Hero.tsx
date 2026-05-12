@@ -1,7 +1,7 @@
 
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import { ArrowRight, Download, Github, Instagram, Linkedin, Twitter } from 'lucide-react';
+import { ArrowRight, Download, Facebook, FacebookIcon, Github, Instagram, Linkedin, Twitter } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import profileImage from '@/assets/profile.png';
 import TypingText from './TypingText';
@@ -19,10 +19,11 @@ const techOrbits = [
 ];
 
 const socialLinks = [
+  { Icon: FacebookIcon, href: 'https://www.facebook.com/asm.jony.2024', label: 'Facebook' },
   { Icon: Github, href: 'https://github.com', label: 'GitHub' },
   { Icon: Linkedin, href: 'https://www.linkedin.com/in/jony-mia-243ab4334/', label: 'LinkedIn' },
-  { Icon: Twitter, href: 'https://x.com/JonyMia220812', label: 'Twitter' },
   { Icon: Instagram, href: 'https://www.instagram.com/jonymia321/', label: 'Instagram' },
+  { Icon: Twitter, href: 'https://x.com/JonyMia220812', label: 'Twitter' },
 ];
 
 const Hero = () => {
@@ -74,7 +75,7 @@ const Hero = () => {
                   t('hero.title'),
                   'React.js Developer',
                   'Next.js Expert',
-                  'UI/UX Enthusiast',
+                  // 'UI/UX Enthusiast',
                   'MERN Stack Developer',
                 ]}
                 className="text-gradient"
@@ -87,7 +88,7 @@ const Hero = () => {
               <span className="text-primary">|</span>
               <span className="text-foreground/90">Next.js Expert</span>
               <span className="text-primary">|</span>
-              <span className="text-foreground/90">UI/UX Enthusiast</span>
+              <span className="text-foreground/90">Problem Solver</span>
             </div>
 
             <p className="text-muted-foreground text-base md:text-lg mb-8 max-w-xl leading-relaxed">

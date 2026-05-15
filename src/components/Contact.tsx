@@ -198,6 +198,8 @@ import { toast } from '@/hooks/use-toast';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
+import emailjs from '@emailjs/browser';
+
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, 'Name is required').max(100, 'Name must be under 100 characters'),
@@ -214,28 +216,28 @@ const contactItems = [
     label: 'Email Me',
     value: 'ajonymia321@gmail.com',
     href: 'mailto:ajonymia321@gmail.com',
-    accent: 'hsl(var(--primary))',
+    // accent: 'hsl(var(--primary))',
   },
   {
     icon: Phone,
     label: 'WhatsApp',
     value: '+880 1770 522886',
     href: 'https://wa.me/+8801770522886',
-    accent: 'hsl(var(--accent))',
+    // accent: 'hsl(var(--accent))',
   },
   {
     icon: MapPin,
     label: 'Location',
     value: 'Bangladesh',
     href: '#',
-    accent: 'hsl(280 70% 55%)',
+    // accent: 'hsl(280 70% 55%)',
   },
   {
     icon: Globe,
     label: 'Response Time',
     value: 'Within 24 Hours',
     href: '#',
-    accent: 'hsl(var(--primary))',
+    // accent: 'hsl(var(--primary))',
   },
 ];
 
@@ -250,32 +252,62 @@ const Contact = () => {
     setForm((p) => ({ ...p, [name]: value }));
     if (errors[name]) setErrors((p) => ({ ...p, [name]: '' }));
   };
+  const forms = useRef()
+  const contactAction = (e) => {
+    e.preventDefault()
+    // let name;
+    // const contactData = new FormData(formData);
+    // const dataField = Object.fromEntries(contactData.entries())
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const result = contactSchema.safeParse(form);
-    if (!result.success) {
-      const fieldErrors: Record<string, string> = {};
-      result.error.issues.forEach((issue) => {
-        if (issue.path[0]) fieldErrors[issue.path[0] as string] = issue.message;
-      });
-      setErrors(fieldErrors);
-      return;
-    }
-    setSubmitting(true);
-    const { name, email, subject, message } = result.data;
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
-    const mailto = `mailto:ajonymia321@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-    window.location.href = mailto;
-    setTimeout(() => {
-      setSubmitting(false);
-      toast({
-        title: 'Message ready to send',
-        description: 'Your email client has been opened with your message.',
-      });
-      setForm({ name: '', email: '', subject: '', message: '' });
-    }, 600);
-  };
+    // console.log(e.target[4]);
+    // console.log(name, mail, subject, body);
+
+
+    emailjs.sendForm('service_ckz20ga', 'template_37w5kps', forms.current, {
+      publicKey: 'E0mnVmPTzCsK6teCb',
+    })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        },
+      );
+
+ setTimeout(() => {
+     const name = e.target[0].value = '';
+    const mail = e.target[1].value = '';
+    const subject = e.target[2].value = '';
+    const body = e.target[3].value = '';
+ }, 1000);
+  }
+
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   const result = contactSchema.safeParse(form);
+  //   if (!result.success) {
+  //     const fieldErrors: Record<string, string> = {};
+  //     result.error.issues.forEach((issue) => {
+  //       if (issue.path[0]) fieldErrors[issue.path[0] as string] = issue.message;
+  //     });
+  //     setErrors(fieldErrors);
+  //     return;
+  //   }
+  //   setSubmitting(true);
+  //   const { name, email, subject, message } = result.data;
+  //   const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+  //   const mailto = `mailto:ajonymia321@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+  //   window.location.href = mailto;
+  //   setTimeout(() => {
+  //     setSubmitting(false);
+  //     toast({
+  //       title: 'Message ready to send',
+  //       description: 'Your email client has been opened with your message.',
+  //     });
+  //     setForm({ name: '', email: '', subject: '', message: '' });
+  //   }, 600);
+  // };
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -398,7 +430,7 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+                <form ref={forms} onSubmit={contactAction} className="space-y-4" noValidate>
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="space-y-1.5">
                       <Label htmlFor="name" className="text-xs uppercase tracking-wider text-muted-foreground">

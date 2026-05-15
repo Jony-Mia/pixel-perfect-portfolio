@@ -80,7 +80,7 @@ const CircularProgress = ({ percentage, name, size = 120 }: CircularProgressProp
             strokeWidth={strokeWidth}
             strokeLinecap="round"
             strokeDasharray={circumference}
-            strokeDashoffset={offset}
+            strokeDashoffset={0}
             className="transition-all duration-300"
           />
           <defs>
@@ -93,7 +93,8 @@ const CircularProgress = ({ percentage, name, size = 120 }: CircularProgressProp
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-1 transition-transform duration-300 group-hover:scale-110">
           <Icon size={26} style={{ color: start }} />
           <span className="text-sm font-bold" style={{ color: start }}>
-            {currentPercentage}%
+            {/* {currentPercentage}% */}
+            {/* 100%` */}
           </span>
         </div>
       </div>

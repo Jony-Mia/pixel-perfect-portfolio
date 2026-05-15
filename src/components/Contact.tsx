@@ -1,194 +1,3 @@
-// import { useEffect, useRef } from 'react';
-// import { gsap } from 'gsap';
-// import { ScrollTrigger } from 'gsap/ScrollTrigger';
-// import { Mail, Phone, MapPin, Globe, MessageCircle, Sparkles, ArrowUpRight } from 'lucide-react';
-
-// gsap.registerPlugin(ScrollTrigger);
-
-// const contactItems = [
-//   {
-//     icon: Mail,
-//     label: 'Email Me',
-//     value: 'ajonymia321@gmail.com',
-//     href: 'mailto:ajonymia321@gmail.com',
-//     accent: 'hsl(var(--primary))',
-//   },
-//   {
-//     icon: Phone,
-//     label: 'WhatsApp',
-//     value: '+880 1770 522886',
-//     href: 'https://wa.me/+8801770522886',
-//     accent: 'hsl(var(--accent))',
-//   },
-//   {
-//     icon: MapPin,
-//     label: 'Location',
-//     value: 'Bangladesh',
-//     href: '#',
-//     accent: 'hsl(280 70% 55%)',
-//   },
-//   {
-//     icon: Globe,
-//     label: 'Response Time',
-//     value: 'Within 24 Hours',
-//     href: '#',
-//     accent: 'hsl(var(--primary))',
-//   },
-// ];
-
-// const Contact = () => {
-//   const sectionRef = useRef<HTMLDivElement>(null);
-
-//   useEffect(() => {
-//     const ctx = gsap.context(() => {
-//       gsap.fromTo(
-//         '.contact-head',
-//         { opacity: 0, y: 40 },
-//         {
-//           opacity: 1,
-//           y: 0,
-//           duration: 0.8,
-//           scrollTrigger: { trigger: sectionRef.current, start: 'top 85%' },
-//         }
-//       );
-//       gsap.fromTo(
-//         '.contact-card',
-//         { opacity: 0, y: 50, scale: 0.95 },
-//         {
-//           opacity: 1,
-//           y: 0,
-//           scale: 1,
-//           duration: 0.7,
-//           stagger: 0.12,
-//           ease: 'power3.out',
-//           scrollTrigger: { trigger: sectionRef.current, start: 'top 75%' },
-//         }
-//       );
-//     }, sectionRef);
-
-//     return () => ctx.revert();
-//   }, []);
-
-//   return (
-//     <section id="contact" ref={sectionRef} className="py-24 relative overflow-hidden">
-//       {/* Background effects */}
-//       <div className="absolute inset-0 bg-grid opacity-30 pointer-events-none" />
-//       <div
-//         className="absolute top-1/4 -left-32 w-96 h-96 rounded-full blur-3xl opacity-20 pointer-events-none"
-//         style={{ background: 'var(--gradient-glow)' }}
-//       />
-//       <div
-//         className="absolute bottom-0 -right-32 w-96 h-96 rounded-full blur-3xl opacity-20 pointer-events-none"
-//         style={{ background: 'radial-gradient(circle, hsl(var(--accent)), transparent 70%)' }}
-//       />
-
-//       <div className="container mx-auto px-4 relative">
-//         {/* Heading */}
-//         <div className="text-center mb-14 contact-head">
-//           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 backdrop-blur-sm mb-5">
-//             <Sparkles size={14} className="text-primary animate-pulse" />
-//             <span className="text-xs font-medium text-primary uppercase tracking-wider">
-//               Let's Connect
-//             </span>
-//           </div>
-//           <h2 className="section-title">
-//             Get In <span className="text-gradient">Touch</span>
-//           </h2>
-//           <p className="section-subtitle">
-//             Have a project in mind? I'm just a message away — let's build something great.
-//           </p>
-//         </div>
-
-//         {/* Contact cards grid */}
-//         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto mb-12">
-//           {contactItems.map(({ icon: Icon, label, value, href, accent }) => (
-//             <a
-//               key={label}
-//               href={href}
-//               target={href.startsWith('http') ? '_blank' : undefined}
-//               rel="noreferrer"
-//               className="contact-card group relative rounded-2xl p-6 glass-card overflow-hidden transition-all duration-500 hover:-translate-y-2"
-//               style={{ ['--accent' as any]: accent }}
-//             >
-//               {/* Glow on hover */}
-//               <span
-//                 className="absolute -inset-px rounded-2xl opacity-0 group-hover:opacity-60 blur-xl transition-opacity duration-500 -z-10"
-//                 style={{ background: accent }}
-//               />
-//               {/* Top corner arrow */}
-//               <ArrowUpRight
-//                 size={18}
-//                 className="absolute top-4 right-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
-//               />
-
-//               <div
-//                 className="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6"
-//                 style={{
-//                   background: `linear-gradient(135deg, ${accent}, ${accent}80)`,
-//                   boxShadow: `0 8px 24px ${accent}40`,
-//                 }}
-//               >
-//                 <Icon className="text-primary" size={24} />
-//               </div>
-
-//               <p className="text-xs uppercase tracking-wider text-muted-foreground mb-1.5">
-//                 {label}
-//               </p>
-//               <p className="font-semibold text-base break-words group-hover:text-primary transition-colors">
-//                 {value}
-//               </p>
-//             </a>
-//           ))}
-//         </div>
-
-//         {/* Big CTA card */}
-//         <div className="contact-card max-w-4xl mx-auto">
-//           <div className="relative overflow-hidden rounded-3xl p-8 md:p-12 glass-card glow-ring text-center">
-//             <div className="absolute inset-0 bg-mesh opacity-50 pointer-events-none" />
-
-//             <div className="relative z-10">
-//               <div className="w-16 h-16 mx-auto rounded-2xl bg-gradient-primary flex items-center justify-center mb-5 animate-pulse-glow">
-//                 <MessageCircle className="text-primary-foreground" size={28} />
-//               </div>
-//               <h3 className="text-2xl md:text-3xl font-bold mb-3">
-//                 Prefer a <span className="text-gradient">quick chat?</span>
-//               </h3>
-//               <p className="text-muted-foreground mb-7 max-w-xl mx-auto">
-//                 Send a message on WhatsApp or email — I usually reply within a few hours.
-//               </p>
-//               <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-//                 <a
-//                   href="https://wa.me/+8801770522886"
-//                   target="_blank"
-//                   rel="noreferrer"
-//                   className="btn-primary inline-flex items-center gap-2"
-//                 >
-//                   <Phone size={18} />
-//                   WhatsApp Me
-//                 </a>
-//                 <a
-//                   href="mailto:ajonymia321@gmail.com"
-//                   className="btn-outline inline-flex items-center gap-2"
-//                 >
-//                   <Mail size={18} />
-//                   Send Email
-//                 </a>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default Contact;
-
-
-
-
-
-
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -280,34 +89,34 @@ const Contact = () => {
     const mail = e.target[1].value = '';
     const subject = e.target[2].value = '';
     const body = e.target[3].value = '';
- }, 1000);
+ }, 2000);
   }
 
-  // const handleSubmit = (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   const result = contactSchema.safeParse(form);
-  //   if (!result.success) {
-  //     const fieldErrors: Record<string, string> = {};
-  //     result.error.issues.forEach((issue) => {
-  //       if (issue.path[0]) fieldErrors[issue.path[0] as string] = issue.message;
-  //     });
-  //     setErrors(fieldErrors);
-  //     return;
-  //   }
-  //   setSubmitting(true);
-  //   const { name, email, subject, message } = result.data;
-  //   const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
-  //   const mailto = `mailto:ajonymia321@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-  //   window.location.href = mailto;
-  //   setTimeout(() => {
-  //     setSubmitting(false);
-  //     toast({
-  //       title: 'Message ready to send',
-  //       description: 'Your email client has been opened with your message.',
-  //     });
-  //     setForm({ name: '', email: '', subject: '', message: '' });
-  //   }, 600);
-  // };
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const result = contactSchema.safeParse(form);
+    if (!result.success) {
+      const fieldErrors: Record<string, string> = {};
+      result.error.issues.forEach((issue) => {
+        if (issue.path[0]) fieldErrors[issue.path[0] as string] = issue.message;
+      });
+      setErrors(fieldErrors);
+      return;
+    }
+    setSubmitting(true);
+    const { name, email, subject, message } = result.data;
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+    const mailto = `mailto:ajonymia321@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+    window.location.href = mailto;
+    setTimeout(() => {
+      setSubmitting(false);
+      toast({
+        title: 'Message ready to send',
+        description: 'Your email client has been opened with your message.',
+      });
+      setForm({ name: '', email: '', subject: '', message: '' });
+    }, 600);
+  };
 
   useEffect(() => {
     const ctx = gsap.context(() => {

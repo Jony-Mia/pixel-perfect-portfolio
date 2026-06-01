@@ -63,7 +63,7 @@ const Navbar = () => {
           </div>
 
           <div className="hidden lg:flex">
-            <button onClick={() => scrollToSection('#portfolio')} className="btn-primary text-sm !py-2.5 !px-5">
+            <button onClick={() => scrollToSection('#portfolio')} className=" btn-primary dark:text-white text-sm !py-2.5 !px-5">
               {t('nav.viewPortfolio')}
             </button>
           </div>

@@ -40,7 +40,8 @@ const CircularProgress = ({ percentage, name, size = 120 }: CircularProgressProp
   const strokeWidth = 8;
   const radius = (size - strokeWidth) / 2;
   const circumference = radius * 2 * Math.PI;
-  const offset = circumference - (currentPercentage / 100) * circumference;
+  const offset = 1
+  // const offset = circumference - (currentPercentage / 100) * circumference;
   const { start, end, Icon } = getInfo(name);
   const gradientId = `gradient-${name.replace(/\s+/g, '-').replace(/\./g, '')}`;
 
@@ -91,13 +92,13 @@ const CircularProgress = ({ percentage, name, size = 120 }: CircularProgressProp
           </defs>
         </svg>
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-1 transition-transform duration-300 group-hover:scale-110">
-          <Icon size={26} style={{ color: start }} />
+          <Icon size={35} style={{ color: start }} />
           <span className="text-sm font-bold" style={{ color: start }}>
-            {currentPercentage}%
+            {/* {currentPercentage}% */}
+      <p className="mt-3 text-sm font-medium text-center">{name}</p>
           </span>
         </div>
       </div>
-      <p className="mt-3 text-sm font-medium text-center">{name}</p>
     </div>
   );
 };

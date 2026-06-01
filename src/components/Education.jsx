@@ -26,7 +26,7 @@ const Education = () => {
                 <div className="g-icon-wrap"><School /> </div>
                 <span className="g-year-badge">2024 — Ongoing</span>
               </div>
-              <p className="g-level">Bachelor's degree</p>
+              <p className="g-level">Bachelor's degree (BSS) </p>
               <p className="g-degree">Political Science</p>
               <p className="g-field">Social Science track</p>
               <hr className="g-sep" />

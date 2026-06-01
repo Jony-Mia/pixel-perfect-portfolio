@@ -69,7 +69,7 @@ const Footer = () => {
                 <Sparkles size={14} className="text-primary" />
                 <span className="text-sm font-semibold uppercase tracking-wider">Stay Updated</span>
               </div>
-              <form
+              {/* <form
                 onSubmit={(e) => e.preventDefault()}
                 className="flex items-center gap-2 p-1 rounded-full border border-border bg-background/60 backdrop-blur-sm focus-within:border-primary transition-colors"
               >
@@ -85,7 +85,7 @@ const Footer = () => {
                 >
                   <Send size={14} />
                 </button>
-              </form>
+              </form> */}
             </div>
 
             {/* Socials */}

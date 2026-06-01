@@ -5,7 +5,7 @@ import { ArrowRight, Download, Facebook, FacebookIcon, Github, Instagram, Linked
 import { useLanguage } from '@/contexts/LanguageContext';
 import profileImage from '@/assets/profile.png';
 import TypingText from './TypingText';
-
+import Resume from "@/assets/resume/Fullstack_Developer.pdf";
 // Position tech badges around the profile (angle in degrees, 0 = top, clockwise)
 const techOrbits = [
   { name: 'HTML', icon: 'https://cdn-icons-png.flaticon.com/128/732/732212.png', angle: 0, color: 'hsl(14, 85%, 55%)' },
@@ -83,13 +83,13 @@ const Hero = () => {
             </h2>
 
             {/* Role chips */}
-            <div className="inline-flex flex-wrap items-center gap-3 px-5 py-2.5 mb-6 rounded-full border border-primary/30 bg-card/40 backdrop-blur-md text-sm">
+            {/* <div className="inline-flex flex-wrap items-center gap-3 px-5 py-2.5 mb-6 rounded-full border border-primary/30 bg-card/40 backdrop-blur-md text-sm">
               <span className="text-foreground/90">React.js Developer</span>
               <span className="text-primary">|</span>
               <span className="text-foreground/90">Next.js Expert</span>
               <span className="text-primary">|</span>
               <span className="text-foreground/90">Problem Solver</span>
-            </div>
+            </div> */}
 
             <p className="text-muted-foreground text-base md:text-lg mb-8 max-w-xl leading-relaxed">
               {t('hero.description')}
@@ -98,8 +98,9 @@ const Hero = () => {
             {/* Buttons */}
             <div className="flex flex-wrap gap-4 mb-10">
               <a
-                href="#contact"
-                onClick={(e) => { e.preventDefault(); scrollTo('#contact'); }}
+                href={Resume}
+                download={true}
+                // onClick={(e) => { e.preventDefault(); scrollTo('#contact'); }}
                 className="btn-primary inline-flex items-center gap-2"
               >
                 Download CV <Download size={18} />

@@ -24,6 +24,8 @@ import rafaOnline from '@/assets/Screenshot_4.png';
 import cargoShipping from '@/assets/Screenshot_5.png';
 import bisNogor from '@/assets/1080-bag-ash-890-tk-4.png';
 import sakura from '@/assets/Screenshot_6.png';
+import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card';
+import { Badge } from './ui/badge';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -183,7 +185,7 @@ const Portfolio = () => {
           {paginatedProjects.map((project) => {
             const d = getDetails(project);
             return (
-              <button
+              <Card
                 key={project.url + project.name}
                 onClick={() => setSelected(project)}
                 className="project-card professional-card overflow-hidden group relative text-left hover:-translate-y-2 hover:shadow-[0_20px_50px_-12px_hsl(var(--primary)/0.45)] hover:border-primary/60"
@@ -200,36 +202,32 @@ const Portfolio = () => {
                   </div>
                 </div>
 
-                <div className="p-5">
+                <CardHeader className="p-5 pb-1">
                   <div className="flex items-center justify-between mb-3">
-                    <span className={`text-xs font-medium px-3 py-1 rounded-full border ${
+                    <Badge className={`text-xs font-medium px-3 py-1 rounded-full border ${
                       project.category === 'websites'
                         ? 'bg-primary/10 text-primary border-primary/30'
                         : 'bg-accent/10 text-accent border-accent/30'
                     }`}>
                       {project.category === 'websites' ? 'Website' : 'Landing Page'}
-                    </span>
+                    </Badge>
                   </div>
-                  <h3 className="font-bold text-lg group-hover:text-primary transition-colors">
+                  <CardTitle className="font-bold text-lg group-hover:text-primary transition-colors">
                     {project.name}
-                  </h3>
-                  <p className="text-muted-foreground text-sm mt-1 line-clamp-2">
+                  </CardTitle>
+                  <CardDescription className="text-muted-foreground text-sm mt-1 line-clamp-2">
                     {d.description}
-                  </p>
-                  <div className="flex flex-wrap gap-1.5 mt-3">
+                  </CardDescription>
+                </CardHeader>
+                  <CardFooter className="flex flex-wrap gap-1.5 p-1 m-2">
                     {d.technologies.slice(0, 3).map((t) => (
                       <span key={t} className="text-[10px] font-medium px-2 py-0.5 rounded-md bg-secondary text-secondary-foreground border border-border">
                         {t}
                       </span>
                     ))}
-                    {d.technologies.length > 3 && (
-                      <span className="text-[10px] font-medium px-2 py-0.5 rounded-md text-muted-foreground">
-                        +{d.technologies.length - 3}
-                      </span>
-                    )}
-                  </div>
-                </div>
-              </button>
+                    
+                  </CardFooter>
+              </Card>
             );
           })}
         </div>

@@ -83,27 +83,27 @@ const About = () => {
         </div>
 
         {/* Experience Timeline */}
-        {/* <div className="mt-16 about-content">
+        <div className="mt-16 about-content">
           <h3 className="text-2xl font-bold text-center mb-8">
             {t('about.experience')} <span className="text-gradient">{t('about.experienceHighlight')}</span>
           </h3>
           <div className="max-w-2xl mx-auto">
             <div className="glass-card p-6 mb-4 border-l-4 border-primary">
-              <h4 className="font-bold text-lg">{t('about.webDeveloper')}</h4>
+              <h4 className="font-bold text-lg">WordPress Developer</h4>
               <p className="text-primary mb-2">Fast IT Care</p>
               <p className="text-muted-foreground text-sm">
-                {t('about.fastItDesc')}
+                Developed WordPress websites, landing pages, and e-commerce solutions using WooCommerce and CartFlows. Delivered high-quality projects with excellent client satisfaction.
               </p>
             </div>
             <div className="glass-card p-6 border-l-4 border-accent">
-              <h4 className="font-bold text-lg">{t('about.juniorWebDeveloper')}</h4>
-              <p className="text-accent mb-2">Topper IT</p>
+              <h4 className="font-bold text-lg">Full Stack Developer</h4>
+              <p className="text-primary mb-2">Freelance</p>
               <p className="text-muted-foreground text-sm">
-                {t('about.topperItDesc')}
+                Started my professional journey building responsive websites and learning industry best practices. Worked on various client projects using NextJS, Better-Auth, MongoDB, NodeJS, Express, and WordPress.
               </p>
             </div>
           </div>
-        </div> */}
+        </div>
       </div>
     </section>
   );

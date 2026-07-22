@@ -45,15 +45,15 @@ const Index = () => {
         {/* <Pricing /> */}
         <Testimonials />
         {/* <Certifications /> */}
-        {/* <PersonalPhotos /> */}
-        {/* <Gallery /> */}
+        <PersonalPhotos />
+        <Gallery />
 
         <Sponsors />
         <CTA />
         <Contact />
         <Footer />
         {/* <LanguageToggle /> */}
-        <ThemeToggle />
+        {/* <ThemeToggle /> */}
         </div>
       </div>
     </LanguageProvider>

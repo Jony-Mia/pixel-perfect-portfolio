@@ -1,21 +1,19 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Home, User, Code2, Briefcase, Wrench, Tag, Mail } from 'lucide-react';
-import { useLanguage } from '@/contexts/LanguageContext';
 import logo from '@/assets/logo.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { t } = useLanguage();
 
   const navLinks = [
-    { name: t('nav.home'), href: '#home', Icon: Home, color: 'text-sky-400' },
-    { name: t('nav.about'), href: '#about', Icon: User, color: 'text-violet-400' },
-    { name: t('nav.skills'), href: '#skills', Icon: Code2, color: 'text-emerald-400' },
-    { name: t('nav.portfolio'), href: '#portfolio', Icon: Briefcase, color: 'text-amber-400' },
-    { name: t('nav.services'), href: '#services', Icon: Wrench, color: 'text-pink-400' },
-    { name: t('nav.pricing'), href: '#pricing', Icon: Tag, color: 'text-orange-400' },
-    { name: t('nav.contact'), href: '#contact', Icon: Mail, color: 'text-cyan-400' },
+    { name: "Home", href: '#home', Icon: Home, color: 'text-sky-400' },
+    { name: "About", href: '#about', Icon: User, color: 'text-violet-400' },
+    { name: "Skills", href: '#skills', Icon: Code2, color: 'text-emerald-400' },
+    { name: "Portfolio", href: '#portfolio', Icon: Briefcase, color: 'text-amber-400' },
+    { name: "Services", href: '#services', Icon: Wrench, color: 'text-pink-400' },
+    // { name: t('nav.pricing'), href: '#pricing', Icon: Tag, color: 'text-orange-400' },
+    { name: "Contact", href: '#contact', Icon: Mail, color: 'text-cyan-400' },
   ];
 
   useEffect(() => {
@@ -64,7 +62,7 @@ const Navbar = () => {
 
           <div className="hidden lg:flex">
             <button onClick={() => scrollToSection('#portfolio')} className=" btn-primary dark:text-white text-sm !py-2.5 !px-5">
-              {t('nav.viewPortfolio')}
+              View Portfolio
             </button>
           </div>
 
@@ -92,7 +90,7 @@ const Navbar = () => {
                 </button>
               ))}
               <button onClick={() => scrollToSection('#portfolio')} className="btn-primary text-sm mt-2">
-                {t('nav.viewPortfolio')}
+              View Portfolio
               </button>
             </div>
           </div>

@@ -15,6 +15,7 @@ import Review from "./dashboard/pages/Review.tsx";
 import Settings from "./dashboard/pages/Settings.tsx";
 import Message from "./dashboard/pages/Message.tsx";
 import Skills from "./dashboard/pages/Skills.tsx";
+import CreateProject from "./dashboard/pages/CreateProject.tsx";
 
 
 const routers = createBrowserRouter([
@@ -57,6 +58,10 @@ const routers = createBrowserRouter([
             {
                 path: "/admin/project",
                 Component: Projects
+            },
+            {
+                path: "/admin/create-project",
+                Component: CreateProject
             },
             {
                 path: "/admin/album",

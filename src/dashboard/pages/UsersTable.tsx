@@ -9,6 +9,15 @@ import {
 } from "@/components/ui/table"
 import profile from "@/assets/profile.png"
 import { Badge } from "@/components/ui/badge";
+
+const userList = [
+    {
+        image: profile,
+        name: "Jony Mia",
+        role: "admin",
+        status: "Online"
+    }
+]
 const UsersTable = () => {
     return (
         <div>
@@ -24,19 +33,26 @@ const UsersTable = () => {
                     </TableRow>
                 </TableHeader>
                 <TableBody>
-                    <TableRow>
-                        <TableCell className="text-center flex justify-center">
-                            <img src={profile} width={50} height={50} className="rounded-md" />
-                        </TableCell>
-                        <TableCell className=" text-center font-medium">Jony Mia</TableCell>
-                        <TableCell className="text-center font-bold">Admin</TableCell>
-                        <TableCell className="text-center">
-                            <div className="flex w-full flex-wrap justify-center gap-2">
-                                <Badge>Active</Badge>
-                                <Badge variant="destructive">Offline</Badge>
-                            </div>
-                        </TableCell>
-                    </TableRow>
+
+                    {userList.map(user => {
+                        return (
+                            <TableRow>
+                                <TableCell className="text-center flex justify-center">
+                                    <img src={user.image} width={50} height={50} className="rounded-md" />
+                                </TableCell>
+                                <TableCell className=" text-center font-medium">{user.name}</TableCell>
+                                <TableCell className="text-center font-bold">{user.role}</TableCell>
+                                <TableCell className="text-center">
+                                    <div className="flex w-full flex-wrap justify-center gap-2">
+                                        {
+                                            user.status==="Online"?<Badge>Active</Badge> : <Badge variant="destructive">Offline</Badge>
+                                        }                                         
+                                    </div>
+                                </TableCell>
+                            </TableRow>
+                        )
+                    })
+                    }
                 </TableBody>
             </Table>
         </div>

@@ -33,7 +33,13 @@ import {
 } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { SquarePen, Trash } from 'lucide-react';
+import { Search, SquarePen, Trash } from 'lucide-react';
+import { Input } from '@/components/ui/input';
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupInput,
+} from "@/components/ui/input-group"
 
 
 const projects = [
@@ -66,6 +72,16 @@ const Projects = () => {
         <div>
             <div className="my-3">
                 <h2 className="font-bold text-2xl" >All Projects</h2>
+                <div className='flex gap-2 my-3'>
+                    <InputGroup className="max-w-xl ">
+                        <InputGroupInput placeholder="Search..." />
+                        <InputGroupAddon>
+                            <Search />
+                        </InputGroupAddon>
+                        <InputGroupAddon align="inline-end">12 results</InputGroupAddon>
+                    </InputGroup>
+                    <Button variant='secondary'>Search <Search /> </Button>
+                </div>
             </div>
 
             <br />
@@ -89,7 +105,7 @@ const Projects = () => {
                                     <Badge variant="outline" className='w-fit'>{data.category}</Badge>
                                     <CardTitle>Design systems meetup</CardTitle>
                                     <CardDescription>
-                                        
+
                                         A practical talk on component APIs, accessibility, and shipping
                                         faster.
                                     </CardDescription>
@@ -98,7 +114,7 @@ const Projects = () => {
                                 <CardFooter className='space-x-2'>
                                     <Button className="w-full">View Project</Button>
                                     <Button variant='outline'>
-                                        <SquarePen/>
+                                        <SquarePen />
                                     </Button>
                                 </CardFooter>
                             </Card>
@@ -115,7 +131,7 @@ export function AlertDialogDemo() {
     return (
         <AlertDialog  >
             <AlertDialogTrigger >
-                <Button className='rounded-full w-fit p-3.5 bg-red-600/80' variant='destructive'><Trash/></Button>
+                <Button className='rounded-full w-fit p-3.5 bg-red-600/80' variant='destructive'><Trash /></Button>
             </AlertDialogTrigger>
             <AlertDialogContent>
                 <AlertDialogHeader>
